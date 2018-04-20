@@ -10,7 +10,7 @@
     switch($method){
         case 'add_new':
 
-                //Prepare Inputs
+                //Prepare Inputs//
                 $status = mysqli_real_escape_string($con, $_POST['status']);        
                 $category = mysqli_real_escape_string($con, $_POST['category']);        
                 $client_name = mysqli_real_escape_string($con, $_POST['client_name']);        
