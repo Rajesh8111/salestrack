@@ -1,0 +1,13 @@
+.sidepanel{
+    height: 100vh;
+}
+
+.men{
+    width:200px;
+}
+.bg-info{
+    background: #00d8d6 !important;
+}
+body{
+    background: #fff !important;
+}

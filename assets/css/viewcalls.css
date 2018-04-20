@@ -1,0 +1,41 @@
+.dataTable .update{
+    padding: 3px 5px;
+    margin: 0px;
+    margin-left:8px;
+    color: #FDFDFC; 
+    f: #f1f1f1;
+    
+    bordder: 1px solid #12d2d3;
+}
+.dataTable .remove{
+    padding: 3px 5px;
+    margin: 0px;
+    margin-left:8px;
+    color: #FDFDFC;
+    backgroufnd: #f1f1f1;
+    bordedr: 1px solid #E78B21;
+}
+body{
+    background: #232332 !important;
+}
+td a{
+    color: #000;
+}
+thead tr{
+    background: #4E5555;
+    color: #F8F7F7;
+}
+
+.green{
+    background: #9BE09D !important;
+}
+.red{
+    background: #C95747!important;
+}
+.amber{
+    background: #ffd54f !important;
+}
+.delete{
+    background: url(assets/images/Path1.png);
+    height: 30px;
+}

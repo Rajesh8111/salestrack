@@ -1,0 +1,12 @@
+.content{
+    margin-top:10px;
+}
+.borderless td, .borderless th {
+    border: none;
+}
+.fluid{
+    margin: 10px 50px;
+}
+body{
+    background: #2C2A2A;
+}
