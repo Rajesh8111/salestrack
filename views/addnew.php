@@ -18,7 +18,7 @@
     <div class="middle h2 d-inline">Track Your New Call</div>
             <div class="d-inline" id="status">
             <div class="custom-control custom-radio d-inline">
-            <input type="radio" id="status-green" name="customRadio" class="custom-control-input">
+            <input type="radio" id="status-green" name="customRadio" class="custom-control-input" checked="true">
             <label class="custom-control-label text-success" for="status-green">Green</label>
           </div>
           <div class="custom-control custom-radio d-inline">
@@ -32,18 +32,15 @@
     </div>
     <div class="mt-20"><label for="">Select Category</label></div>                
     <select class="form-control custom-textbox" id="category">
-    <option value="1">Win Telco</option>
-    <option value="2">Win Others</option>
-    <option value="3">Others</option>
     </select>
     <div class="row justify-content-around mt-20">
-        <div class="col-3">
-            <label for="">Client Name</label>
-            <input type="text" name="" id="client-name" class="form-control-sm custom-textbox w-100">
+        <div class="col-3 ">
+            <label  for="">Client Name <span class="required"> *</span></label>
+            <input type="text" name="" id="client-name" class="required form-control-sm custom-textbox w-100">
         </div>
-        <div class="col-3">
-            <label for="">Process Name</label>            
-            <input type="text" name="" id="process-name" class="form-control-sm custom-textbox w-100" >
+        <div class="col-3 ">
+            <label for="">Process Name<span class="required"> *</span></label>            
+            <input type="text" name="" id="process-name" class=" form-control-sm custom-textbox w-100" >
         </div>
         <div class="col-3">
         <label for="">Region</label>            
@@ -93,27 +90,41 @@
         </div>
         
         <div class="row custom-text mt-20 ">
-            Current Updates
-            <textarea name="" id="current-updates-textarea" cols="30" rows="3" class="form-control" ></textarea>
+            <label class="w-100">Current Updates
+            <button class="btn-expand" data-toggle="collapse" href="#current-updates-textarea" role="button" aria-expanded="false" aria-controls="collapseExample">&#x25BC;</button>                
+            </label>
+            <textarea name="" id="current-updates-textarea" cols="30" rows="3" class="collapse form-control" ></textarea>
         
         </div>
         <div class="row custom-text mt-20 ">
-            Conversational History
-            <textarea name="" id="conversational-history-textarea" cols="20" rows="3" class="form-control" ></textarea>
+        <label class="w-100">Conversational History
+            <button class="btn-expand" data-toggle="collapse" href="#conversational-history-textarea" role="button" aria-expanded="false" aria-controls="collapseExample">&#x25BC;</button>                
+            </label>
+            
+            <textarea name="" id="conversational-history-textarea" cols="20" rows="3" class="collapse form-control" ></textarea>
         </div>
 
         
         <div class="row custom-text mt-20">
-        Prodapt Participants
-            <textarea name=""  cols="20" rows="3" class="form-control" id="prodapt-participants-textarea" ></textarea>
+        <label class="w-100">Prodapt Participants
+            <button class="btn-expand" data-toggle="collapse" href="#prodapt-participants-textarea" role="button" aria-expanded="false" aria-controls="collapseExample">&#x25BC;</button>                
+            </label>
+        
+            <textarea name=""  cols="20" rows="3" class="collapse form-control" id="prodapt-participants-textarea" ></textarea>
         </div>
         <div class="row custom-text mt-20 ">
-        Discussion Points
-            <textarea name="" id="discussion-points-textarea" cols="20" rows="3" class="form-control" ></textarea>    
+        <label class="w-100">Discussion Points
+            <button class="btn-expand" data-toggle="collapse" href="#discussion-points-textarea" role="button" aria-expanded="false" aria-controls="collapseExample">&#x25BC;</button>                
+            </label>
+        
+            <textarea name="" id="discussion-points-textarea" cols="20" rows="3" class="collapse form-control" ></textarea>    
         </div>
         <div class="row custom-text mt-20">
-            Next Steps
-            <textarea name="" id="next-steps-textarea" cols="20" rows="3" class="form-control" ></textarea>
+        <label class="w-100">Next Steps
+            <button class="btn-expand" data-toggle="collapse" href="#next-steps-textarea" role="button" aria-expanded="false" aria-controls="collapseExample">&#x25BC;</button>                
+            </label>
+            
+            <textarea name="" id="next-steps-textarea" cols="20" rows="3" class="collapse form-control" ></textarea>
         </div>
         
 

@@ -25,9 +25,10 @@
 <label for="">Category</label>
 <select class="custom-select form-control-sm" id="category">
   <option value="0">All</option>
-  <option value="1">Win-Telco</option>
-  <option value="2">Win-Others</option>
-  <option value="3">Others</option>
+  <option value="1">Win Telco</option>
+  <option value="2">Other Telco</option>
+  <option value="3">Non Telco</option>
+  <option value="4">Others</option>
 </select>
 </div>
 <div class="d-inline ml-20 float-right">
@@ -40,8 +41,6 @@
 </select>
 </div>
 </div>
-<button class="ml-20 btn btn-info" style="float:right" id="export">Export to Excel</button>
-<br>
 <hr>
 <div class="row mt-20">
 <div class="container-fluid ">

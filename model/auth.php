@@ -10,7 +10,7 @@
     switch($method){
         case 'login':
             $username = mysqli_real_escape_string($con, $_POST['username']);
-            $password = mysqli_real_escape_string($con, $_POST['password']);
+            $password = md5(mysqli_real_escape_string($con, $_POST['password']));
 
             $sql = "select id,name from users where mail='".$username."' and pass='".$password."'";
             

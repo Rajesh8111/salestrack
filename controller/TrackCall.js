@@ -1,4 +1,32 @@
 (function(){
+//Load Categories
+    $(document).ready(function(){
+        //API Call
+        $.ajax({
+            type:"POST",
+            url: "../model/call.php",
+            data: 
+                "method=load_categories",
+            success: function(result){
+                if(result){
+                    rows = $.parseJSON(result);
+                    console.log(rows);
+                    var category = $('#category');
+                    $.each(rows, function(index, value) {
+                        $.each(value, function(index, value) {
+                            var list = "<option value='"+value.id+"'>"+value.category+"</option>";
+                            category.append(list);
+                        });
+                    });
+                }
+                else{
+                    console.log(result);
+                }
+                $('.loading').hide();
+            }
+        });
+    });
+
     $('#submit').click(function(){
         $('.loading').show()        
         var category = $('#category').val();
@@ -8,15 +36,19 @@
         status = $('#status-green').is(":checked") ? 1 : '';
         status = $('#status-red').is(":checked") ? 2 : status;
         status = $('#status-amber').is(":checked") ? 3: status;
-        if(status==null||status==0){
-        alert('status must be selected before submitting!!');
-        return false;
-        }
-        $('#submit').attr("disabled","disabled");
+        
         
         
         var client_name = $('#client-name').val();
         var process_name = $('#process-name').val();
+
+        if(client_name==""||process_name==""){
+            alert('Client and Process names are mandatory fields!');
+            $('.loading').hide()                
+            return false;
+            }
+            $('#submit').attr("disabled","disabled");
+
         var region =$('#region').val();
         var client_contact_name =$('#client-contact-name').val();
         var client_contact_designation =$('#client-contact-designation').val();

@@ -12,23 +12,55 @@
             type:"POST",
             url: "../model/call.php",
             data: 
+                "method=load_categories",
+            success: function(result){
+                if(result){
+                    rows = $.parseJSON(result);
+                    console.log(rows);
+                    var category = $('#category');
+                    $.each(rows, function(index, value) {
+                        $.each(value, function(index, value) {
+                            var list = "<option value='"+value.id+"'>"+value.category+"</option>";
+                            category.append(list);
+                        });
+                    });
+                }
+                else{
+                    console.log(result);
+                }
+                $('.loading').hide();
+            }
+        });
+
+        //API Call
+        $.ajax({
+            type:"POST",
+            url: "../model/call.php",
+            data: 
                 "method=populate_data"
                 +"&id="+id,
             success: function(result){
-                if(result){
+                if(result!='null'){
                     var call = $.parseJSON(result);
                     console.log(call); 
+
+                    if(call.client_name=="" && call.process_name==""){
+                        alert("No Data found!");
+                        window.href.location="../home.php";
+                    }
                     
-                    var category = call.category_id==1?"Win Telco":
-                    call.category_id==2?"Win Others":
-                    call.category_id==3?"Others":"null";
-                    $("#category option:contains(" + category + ")").attr('selected', 'selected');
+                    // var category = call.category_id==1?"Win Telco":
+                    // call.category_id==2?"Win Others":
+                    // call.category_id==3?"Others":"null";
+                    $("#category").val(call.category_id);
+                   // $("#category option:contains(" + category + ")").attr('selected', 'selected');
 
                     var status = call.status_id;
                     if(status==1){$("#status-green").attr('checked', 'true');$("#status-green").click();}
                     else if(status==2){$("#status-red").attr('checked', 'true');$("#status-red").click();}
                     else if(status==3){$("#status-amber").attr('checked', 'true');$("#status-amber").click();}
                     else return 0;
+
 
 
                     $('#client-name').val(call.client_name);
@@ -54,6 +86,8 @@
                 }
                 else{
                     console.log(result);
+                    alert("No Data found!");
+                    window.location.href="viewcalls.php";
                 }
                
             }

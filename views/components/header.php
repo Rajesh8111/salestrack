@@ -1,5 +1,5 @@
 <header id="header">
-      <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="home.php">Sales Call Tracker</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -20,8 +20,9 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
             <a class="dropdown-item" href="viewcalls.php">All</a>
-            <a class="dropdown-item" href="viewcalls.php?category=Win-Telco&status=All">Win Telco</a>
-            <a class="dropdown-item" href="viewcalls.php?category=Win-Others&status=All">Win Others</a>
+            <a class="dropdown-item" href="viewcalls.php?category=Win Telco&status=All">Win Telco</a>
+            <a class="dropdown-item" href="viewcalls.php?category=Other Telco&status=All">Other Telco</a>
+            <a class="dropdown-item" href="viewcalls.php?category=Non Telco&status=All">Non Telco</a>
             <a class="dropdown-item" href="viewcalls.php?category=Others&status=All">Others</a>
             </div>
           </div>
@@ -37,9 +38,10 @@
             <a class="dropdown-item" href="viewcalls.php?category=all&status=Amber">Amber</a>
             </div>
           </div>
-
+          <a href="../model/export.php" class="btn btn-tranparent text-white">Export</a>
           
           </ul>
+
             <div class="btn-group ">
                 <button type="button" class="btn btn-tranparent text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <img src="../assets/images/loading.gif" alt="loading..." class="loading" width=20px; style="display:none;">
@@ -49,6 +51,7 @@
                     <button class="dropdown-item" type="button" id="logout">Logout</button>
                 </div>
             </div>
+
         </div>
       </nav>
     </header>

@@ -7,6 +7,9 @@
 .fluid{
     margin: 10px 50px;
 }
-body{
-    background: #2C2A2A;
+body,#submit{
+    background-image: linear-gradient(to left bottom, #29b55a, #29b55a, #29b55a, #29b55a, #29b55a);
+}
+.btn-expand{
+    color: #817E5E;
 }

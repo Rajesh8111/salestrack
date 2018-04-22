@@ -1,5 +1,12 @@
 (function(){
-    $('#export').click(function(){
+
+    //Load Categories
+    $(document).ready(function(){
+        
+    });
+
+
+  /*   $('#export').click(function(){
         $('.loading').show();
         var category = (param('category')!='')?param('category'):'all';
         var status = (param('status')!='')?param('status'):'all';
@@ -30,21 +37,28 @@
         //         }      
         // });
     });
-    
+     */
 
     $(document).ready(function() {
+
+        
+
         $('.loading').show();
         
         var category = (param('category')!='')?param('category'):'all';
         var status = (param('status')!='')?param('status'):'all';
+
+        
+        category = category.replace('%20',' ');
+        status = status.replace('%20',' ');
+
         $("#category option:contains(" + category + ")").attr('selected', 'selected');
         $("#status option:contains(" + status + ")").attr('selected', 'selected');
+
 
         category =  $("#category option:selected").text();
         status =  $("#status option:selected").text();
 
-        category = category.replace('-',' ');
-        status = status.replace('-',' ');
 
 
         //API Call

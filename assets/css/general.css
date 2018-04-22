@@ -1,8 +1,10 @@
 body,html{
-    font-family: 'Mina', sans-serif;
     padding:0;
     margin:0;
     background: #f1f1f1;
+}
+header{
+    margin-bottom: 55px;
 }
 .center{
     position: relative;
@@ -39,7 +41,7 @@ body,html{
     color :  #fff !important;
 }
 .bg-green{
-    background: #91B466 !important;
+    background-image: linear-gradient(to left bottom, #29b55a, #29b55a, #29b55a, #29b55a, #29b55a);
 }
 .bg-red{
     background: #E75457 !important;
@@ -63,4 +65,15 @@ body,html{
 .ml-20
 {
     margin-left: 20px;
+}
+.btn-expand{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background: rgb(0,0,0,0);
+    float: right;
+}
+.required {
+    content: "*";
+    color: red;
 }

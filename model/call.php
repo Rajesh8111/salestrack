@@ -10,7 +10,7 @@
     switch($method){
         case 'add_new':
 
-                //Prepare Inputs//
+                //Prepare Inputs
                 $status = mysqli_real_escape_string($con, $_POST['status']);        
                 $category = mysqli_real_escape_string($con, $_POST['category']);        
                 $client_name = mysqli_real_escape_string($con, $_POST['client_name']);        
@@ -65,30 +65,30 @@
        if(strtolower($status)=="all" && strtolower($category)=="all"){
         $sql = "SELECT *  from calls join mapping on calls.id=mapping.call_id  join category on "
         ."category.id=mapping.category_id where calls.id in "
-        ."(SELECT call_id FROM mapping where user_id='$user' and category_id in "
+        ."(SELECT call_id FROM mapping where  category_id in "
         ."(SELECT id from category) and status_id in "
-        ."(SELECT id from status))";
+        ."(SELECT id from status)) and Enabled='1'";
        }
         else if(strtolower($status)=="all"){
         $sql = "SELECT *  from calls join mapping on calls.id=mapping.call_id  join category on "
         ."category.id=mapping.category_id where calls.id in "
-        ."(SELECT call_id FROM mapping where user_id='$user' and category_id in "
+        ."(SELECT call_id FROM mapping where  category_id in "
         ."(SELECT id from category where category='$category') and status_id in "
-        ."(SELECT id from status))";
+        ."(SELECT id from status)) and Enabled='1'";
        }
        else if (strtolower($category)=="all"){
         $sql = "SELECT *  from calls join mapping on calls.id=mapping.call_id  join category on "
         ."category.id=mapping.category_id where calls.id in "
-        ."(SELECT call_id FROM mapping where user_id='$user' and category_id in "
+        ."(SELECT call_id FROM mapping where  category_id in "
         ."(SELECT id from category) and status_id in "
-        ."(SELECT id from status where status='$status'))";
+        ."(SELECT id from status where status='$status')) and Enabled='1'";
        }
        else{               
         $sql = "SELECT *  from calls join mapping on calls.id=mapping.call_id  join category on "
         ."category.id=mapping.category_id where calls.id in "
-        ."(SELECT call_id FROM mapping where user_id='$user' and category_id in "
+        ."(SELECT call_id FROM mapping where  category_id in "
         ."(SELECT id from category where category='$category') and status_id in "
-        ."(SELECT id from status where status='$status'))";
+        ."(SELECT id from status where status='$status')) and Enabled='1'";
        }
        
                 $rows = array();
@@ -111,7 +111,7 @@
 
                 $id = mysqli_real_escape_string($con, $_POST['id']);
                 $user = $_SESSION["id"];         
-                $sql="SELECT *  from calls join mapping on calls.id=mapping.call_id where calls.id in (select call_id from mapping where user_id='$user' and call_id='$id')";
+                $sql="SELECT *  from calls join mapping on calls.id=mapping.call_id where calls.id in (select call_id from mapping where call_id='$id')";
                 if ($res = mysqli_query($con,$sql)) {
                     $r = mysqli_fetch_array($res);
                     print json_encode($r);
@@ -152,7 +152,6 @@
             "client_feedback='$client_feedback',next_steps='$next_steps',target_date='$target_date',remarks='$remarks',responsible='$responsible'".
             "where id='$id'";
 
-            echo $sql;
 
             if (mysqli_query($con,$sql)) {
 
@@ -177,7 +176,7 @@
         break;
         case 'removecall':
             $id = mysqli_real_escape_string($con, $_POST['call_id']);
-            $sql = "DELETE from calls where id=$id";
+            $sql = "update mapping set Enabled='0' where call_id=$id";
             if (mysqli_query($con,$sql)) {
                 echo true;
                 return true;
@@ -255,5 +254,20 @@
 
             }
             break;
+            case 'load_categories':       
+                            $sql="SELECT id,category from category";
+                            $rows = array();
+                            if ($res = mysqli_query($con,$sql)) {
+                                while($r = mysqli_fetch_array($res)) {
+                                    $rows['object_name'][] = $r;
+                                  }
+                                  print json_encode($rows);
+                                return true;
+                            }
+                            else{
+                                die('Error: ' . mysqli_error($con));
+                                return false;
+                            }
+                    break;
         }    }
 ?>
