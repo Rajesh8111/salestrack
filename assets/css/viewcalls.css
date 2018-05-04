@@ -27,13 +27,16 @@ thead tr{
 }
 
 .green{
-    background: #9BE09D !important;
+    cdolor: #0DAF0D !important;
+    background: #2ecc71 !important;
 }
 .red{
-    background: #C95747!important;
+    colosr: #C95747!important;
+    background: #e74c3c !important;
 }
 .amber{
-    background: #ffd54f !important;
+    colpor: #EEBB24 !important;
+    background: #EBEB30 !important;
 }
 .delete{
     background: url(assets/images/Path1.png);

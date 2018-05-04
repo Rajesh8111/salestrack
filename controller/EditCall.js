@@ -80,6 +80,11 @@
                     $('#next-steps-textarea').text(call.next_steps);
                     $('#target-date').val(call.target_date);
                     $('#remarks').val(call.remarks);
+                    $('#project-start-date').val(call.project_start_date);
+                    $('#project-end-date').val(call.project_end_date);
+                    $('#current-status').val(call.current_status);
+                    $('#opportunity-status').val(call.opportunity_status);
+                    
                     
                     $('.loading').hide();
         
@@ -139,6 +144,10 @@ function param(name) {
         var next_steps =$('#next-steps-textarea').val();
         var target_date =$('#target-date').val();
         var remarks =$('#remarks').val();
+        var project_start_date = $('#project-start-date').val();
+        var project_end_date = $('#project-end-date').val();
+        var current_status = $('#current-status').val();
+        var opportunity_status = $('#opportunity-status').val();
         $(this).addClass("disabled");
         
         //API Call
@@ -166,7 +175,11 @@ function param(name) {
                 +"&discussion_points="+discussion_points
                 +"&next_steps="+next_steps
                 +"&target_date="+target_date
-                +"&remarks="+remarks,
+                +"&remarks="+remarks
+                +"&project_start_date="+project_start_date
+                +"&project_end_date="+project_end_date
+                +"&current_status="+current_status
+                +"&opportunity_status="+opportunity_status,
                 success: function(result){
                     console.log(result);
                 if(result){

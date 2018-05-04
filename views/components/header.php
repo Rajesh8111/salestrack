@@ -38,7 +38,7 @@
             <a class="dropdown-item" href="viewcalls.php?category=all&status=Amber">Amber</a>
             </div>
           </div>
-          <a href="../model/export.php" class="btn btn-tranparent text-white">Export</a>
+          <a href="../model/export3.php" class="btn btn-tranparent text-white">Export</a>
           
           </ul>
 

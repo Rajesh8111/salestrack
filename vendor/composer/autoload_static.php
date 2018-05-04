@@ -6,6 +6,25 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit49254c70ece3f7948616c903a9c8b069
 {
+    public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'Psr\\SimpleCache\\' => 16,
+            'PhpOffice\\PhpSpreadsheet\\' => 25,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Psr\\SimpleCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
+        ),
+        'PhpOffice\\PhpSpreadsheet\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet',
+        ),
+    );
+
     public static $prefixesPsr0 = array (
         'P' => 
         array (
@@ -19,6 +38,8 @@ class ComposerStaticInit49254c70ece3f7948616c903a9c8b069
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit49254c70ece3f7948616c903a9c8b069::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit49254c70ece3f7948616c903a9c8b069::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit49254c70ece3f7948616c903a9c8b069::$prefixesPsr0;
 
         }, null, ClassLoader::class);

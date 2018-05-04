@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2018 at 12:19 PM
+-- Generation Time: May 01, 2018 at 02:14 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -46,18 +46,26 @@ CREATE TABLE `calls` (
   `next_steps` text NOT NULL,
   `responsible` text NOT NULL,
   `target_date` date NOT NULL,
-  `remarks` text NOT NULL
+  `remarks` text NOT NULL,
+  `project_start_date` date NOT NULL,
+  `project_end_date` date NOT NULL,
+  `current_status` varchar(50) NOT NULL,
+  `opportunity_status` varchar(50) NOT NULL,
+  `last_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `calls`
 --
 
-INSERT INTO `calls` (`id`, `client_name`, `process_name`, `current_update`, `conversational_history`, `region`, `client_contact_name`, `client_contact_designation`, `sales_spoc`, `first_meet`, `second_meet`, `prodapt_participants`, `discussion_points`, `client_feedback`, `next_steps`, `responsible`, `target_date`, `remarks`) VALUES
-(1, 'h', 'j', '2018-12-31 : sa\n', '2018-12-31 : scs\n', 'h', 'jj', 'hj', 'd', '2018-12-31', '2018-12-31', '2018-12-31 : dssa\n', '2018-12-31 : sasd\n', 'sdss', '2018-12-31 : scs\n', 'dsd', '2018-12-31', 'das'),
-(2, 'HI', 'jk', '2018-12-31 : sd\n', '2018-10-31 : sd\n', 'jljk', 'jkj', 'jkj', 'jkj', '2018-12-31', '2018-12-31', '2018-12-31 : sdsd\n', '2018-12-31 : ds\n', 'ds', '2018-12-31 : sdsd\n', 'd', '0000-00-00', 'ass'),
-(3, 'dfs', 'kjk', '2018-12-31 : s\n', '2018-12-31 : sdf\n', 'jk', 'jkks', 'sds', 'ddvs', '2018-12-31', '2018-12-31', '2018-12-31 : sdfsdf\n', '2018-12-31 : dsfsd\n', 'sd', '2018-12-31 : dsfs\n', 'asd', '2018-12-31', 'sdsdfsd'),
-(4, '2', '2', '2222-02-02 : 2\n1111-11-11 : 1\n', '2222-02-02 : 2\n1111-11-11 : 1\n', '2', '2', '2', '2', '2222-02-02', '2222-02-02', '2222-02-02 : 2\n1111-11-11 : 1\n', '2222-02-02 : 2\n1111-11-11 : 1\n', '2', '2222-02-02 : 2\n1111-11-11 : 1\n', '2', '2222-02-02', '2');
+INSERT INTO `calls` (`id`, `client_name`, `process_name`, `current_update`, `conversational_history`, `region`, `client_contact_name`, `client_contact_designation`, `sales_spoc`, `first_meet`, `second_meet`, `prodapt_participants`, `discussion_points`, `client_feedback`, `next_steps`, `responsible`, `target_date`, `remarks`, `project_start_date`, `project_end_date`, `current_status`, `opportunity_status`, `last_updated`) VALUES
+(3, 'a', 'a', '', '', 'a', 'a', 'a', 'a', '2018-12-31', '2017-12-31', '', '', 'a', '', 'aa', '2018-12-31', 'a', '0000-00-00', '0000-00-00', 'a', '', '2018-04-30 03:32:47'),
+(4, 'asd', 'asd', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '', '', '2018-04-30 03:38:25'),
+(5, 'sfds', 'sf', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '', '', '2018-04-30 03:39:48'),
+(6, 'ads', 'sad', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '', 'dfv', '2018-04-30 03:40:18'),
+(7, 'sdf', 'dfs', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '', '2018-04-11', '2018-04-04', 'Deployment', 's', '2018-04-30 03:41:59'),
+(8, 'a', 'a', '', '', 'aa', 'a', 'a', 'a', '2018-12-31', '2018-12-31', '', '', 'a', '', 'a', '2018-12-31', 'a', '2018-12-31', '2018-12-31', 'Demo', 'b', '2018-04-30 03:49:23'),
+(9, 'fsfq', 'bbkh', 'sdf', 'sdfs', 'hkjh', 'kjh', 'hk', 'hk', '2018-12-31', '0000-00-00', 'sdfsdf', 'dsfdsf', 'lnn', 'fsdfsd`', 'mnbjhb', '2018-12-31', 'fdsd', '2018-12-31', '2018-12-31', 'Kick off call', 'vfdf', '2018-05-01 06:36:13');
 
 -- --------------------------------------------------------
 
@@ -76,8 +84,9 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`id`, `category`) VALUES
 (1, 'Win Telco'),
-(2, 'Win Others'),
-(3, 'Others');
+(2, 'Other Telco'),
+(3, 'Non Telco'),
+(4, 'Others');
 
 -- --------------------------------------------------------
 
@@ -90,18 +99,22 @@ CREATE TABLE `mapping` (
   `user_id` int(11) NOT NULL,
   `call_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
-  `status_id` int(11) NOT NULL
+  `status_id` int(11) NOT NULL,
+  `Enabled` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `mapping`
 --
 
-INSERT INTO `mapping` (`id`, `user_id`, `call_id`, `category_id`, `status_id`) VALUES
-(1, 2, 1, 3, 1),
-(2, 2, 2, 3, 2),
-(3, 2, 3, 1, 3),
-(4, 2, 4, 3, 2);
+INSERT INTO `mapping` (`id`, `user_id`, `call_id`, `category_id`, `status_id`, `Enabled`) VALUES
+(3, 2, 3, 1, 1, 1),
+(4, 2, 4, 1, 3, 1),
+(5, 2, 5, 1, 1, 1),
+(6, 2, 6, 3, 3, 1),
+(7, 2, 7, 1, 1, 1),
+(8, 2, 8, 1, 2, 1),
+(9, 2, 9, 2, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -141,7 +154,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `pass`, `mail`) VALUES
-(2, 'Rajesh Sambasivam', 'raj', 'rajesh.s@prodapt.com');
+(2, 'Rajesh Sambasivam', '48fab5aa17e2884fc22bdb3f4cf612dd', 'rajesh.s@prodapt.com'),
+(3, 'Sivakumar S', 'siva', 'sivakumar.s@prodapt.com');
 
 --
 -- Indexes for dumped tables
@@ -185,19 +199,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `calls`
 --
 ALTER TABLE `calls`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `mapping`
 --
 ALTER TABLE `mapping`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `status`
@@ -209,7 +223,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

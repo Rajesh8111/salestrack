@@ -30,19 +30,23 @@
                 $next_steps = mysqli_real_escape_string($con, $_POST['next_steps']);        
                 $target_date = mysqli_real_escape_string($con, $_POST['target_date']);        
                 $remarks = mysqli_real_escape_string($con, $_POST['remarks']);       
+                $project_start_date = mysqli_real_escape_string($con, $_POST['project_start_date']);       
+                $project_end_date = mysqli_real_escape_string($con, $_POST['project_end_date']);       
+                $current_status = mysqli_real_escape_string($con, $_POST['current_status']);       
+                $opportunity_status = mysqli_real_escape_string($con, $_POST['opportunity_status']);       
                 
                 $sql = "insert into calls (client_name,process_name,current_update,conversational_history,region,"
                     ."client_contact_name,client_contact_designation,sales_spoc,first_meet,second_meet,prodapt_participants,"
-                    ."discussion_points,client_feedback,next_steps,target_date,remarks,responsible)"
+                    ."discussion_points,client_feedback,next_steps,target_date,remarks,responsible,project_start_date,project_end_date,current_status,opportunity_status)"
                     ." values('$client_name','$process_name','$current_updates','$conversational_history','$region',"
                     ."'$client_contact_name','$client_contact_designation','$sales_spoc','$first_meet','$second_meet','$prodapt_participants',"
-                    ."'$discussion_points','$client_feedback','$next_steps','$target_date','$remarks','$responsible')";
+                    ."'$discussion_points','$client_feedback','$next_steps','$target_date','$remarks','$responsible','$project_start_date','$project_end_date','$current_status','$opportunity_status')";
 
                 if (mysqli_query($con,$sql)) {
                     $call_id  = mysqli_insert_id($con);
                     $user_id = $_SESSION['id'];
 
-                    $sql = "insert into mapping (user_id,call_id,category_id,status_id) values('$user_id','$call_id','$category','$status')";
+                    $sql = "insert into mapping (user_id,call_id,category_id,status_id,Enabled) values('$user_id','$call_id','$category','$status','1')";
 
                     if (mysqli_query($con,$sql)) {
                         echo "true";
@@ -144,12 +148,17 @@
             $next_steps = mysqli_real_escape_string($con, $_POST['next_steps']);        
             $target_date = mysqli_real_escape_string($con, $_POST['target_date']);        
             $remarks = mysqli_real_escape_string($con, $_POST['remarks']);       
+            $project_start_date = mysqli_real_escape_string($con, $_POST['project_start_date']);       
+            $project_end_date = mysqli_real_escape_string($con, $_POST['project_end_date']);       
+            $current_status = mysqli_real_escape_string($con, $_POST['current_status']);       
+            $opportunity_status = mysqli_real_escape_string($con, $_POST['opportunity_status']);   
 
             $sql = "update calls set client_name='$client_name',process_name='$process_name',current_update='$current_updates',".
             "conversational_history='$conversational_history',region='$region',client_contact_name='$client_contact_name',".
             "client_contact_designation='$client_contact_designation',sales_spoc='$sales_spoc',first_meet='$first_meet',".
             "second_meet='$second_meet',prodapt_participants='$prodapt_participants',discussion_points='$discussion_points',".
-            "client_feedback='$client_feedback',next_steps='$next_steps',target_date='$target_date',remarks='$remarks',responsible='$responsible'".
+            "client_feedback='$client_feedback',next_steps='$next_steps',target_date='$target_date',remarks='$remarks',responsible='$responsible',".
+            "project_start_date='$project_start_date',project_end_date='$project_end_date',current_status='$current_status',opportunity_status='$opportunity_status'".
             "where id='$id'";
 
 
@@ -269,5 +278,68 @@
                                 return false;
                             }
                     break;
+            case 'load_dashboard':
+
+
+            $data=array();
+            //Pipeline in Win Telco - Green
+$sql = "select count(id) from mapping where category_id='1' and status_id='1' and Enabled='1'";
+$res = mysqli_query($con,$sql);
+$r=mysqli_fetch_array($res);
+$data['11']=$r[0];
+
+//Pipeline in Other Telco - Green
+$sql = "select count(id) from mapping where category_id='2' and status_id='1' and Enabled='1'";
+$res = mysqli_query($con,$sql);
+$r=mysqli_fetch_array($res);
+$data['21']=$r[0];
+
+
+//Pipeline in Non Telco - Green
+$sql = "select count(id) from mapping where category_id='3' and status_id='1' and Enabled='1'";
+$res = mysqli_query($con,$sql);
+$r=mysqli_fetch_array($res);
+$data['31']=$r[0];
+
+//Pipeline in Win Telco - Amber
+$sql = "select count(id) from mapping where category_id='1' and status_id='3' and Enabled='1'";
+$res = mysqli_query($con,$sql);
+$r=mysqli_fetch_array($res);
+$data['13']=$r[0];
+
+//Pipeline in Other Telco - Amber
+$sql = "select count(id) from mapping where category_id='2' and status_id='3' and Enabled='1'";
+$res = mysqli_query($con,$sql);
+$r=mysqli_fetch_array($res);
+$data['23']=$r[0];
+
+
+//Pipeline in Non Telco - Amber
+$sql = "select count(id) from mapping where category_id='3' and status_id='3' and Enabled='1'";
+$res = mysqli_query($con,$sql);
+$r=mysqli_fetch_array($res);
+$data['33']=$r[0];
+
+//Pipeline in Win Telco - Red
+$sql = "select count(id) from mapping where category_id='1' and status_id='2' and Enabled='1'";
+$res = mysqli_query($con,$sql);
+$r=mysqli_fetch_array($res);
+$data['12']=$r[0];
+
+//Pipeline in Other Telco - Red
+$sql = "select count(id) from mapping where category_id='2' and status_id='2' and Enabled='1'";
+$res = mysqli_query($con,$sql);
+$r=mysqli_fetch_array($res);
+$data['22']=$r[0];
+
+
+//Pipeline in Non Telco - Red
+$sql = "select count(id) from mapping where category_id='3' and status_id='2' and Enabled='1'";
+$res = mysqli_query($con,$sql);
+$r=mysqli_fetch_array($res);
+$data['32']=$r[0];
+
+print(json_encode($data));
+            break;
         }    }
 ?>

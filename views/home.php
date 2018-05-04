@@ -21,15 +21,26 @@
     <div class="row content justify-content-around bg-white ">
         <div class="col-lg-3 text-center">
             <h2>Windstream Telco</h2>
-            <p><a class="btn btn-success" href="#" role="button">View &raquo;</a></p>
+            <p>
+                <a class="btn btn-danger" href="#" role="button" id="11">0</a>
+                <a class="btn bg-amber text-white" href="#" role="button" id="21">0 </a>
+                <a class="btn btn-success" href="#" role="button" id="31">0</a>
+            </p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-3 text-center">
-            <h2>Windstream Others</h2>
-            <p><a class="btn btn-warning text-white" href="#" role="button">View &raquo;</a></p>
+            <h2>Other Telco</h2><p>
+            <a class="btn btn-danger" href="#" role="button" id="13">0</a>
+            <a class="btn bg-amber text-white" href="#" role="button" id="23">0</a>
+            <a class="btn btn-success" href="#" role="button" id="33">0</a>
+        </p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-3 text-center ">
-            <h2>Others</h2>
-            <p><a class="btn btn-danger" href="#" role="button">View &raquo;</a></p>
+            <h2>Non Telco</h2>
+            <p>
+                <a class="btn btn-danger" href="#" role="button" id="12">0</a>
+                <a class="btn bg-amber text-white" href="#" role="button" id="22">0</a>
+                <a class="btn btn-success" href="#" role="button" id="32">0</a>
+            </p>
         </div><!-- /.col-lg-4 -->
     </div>
     <!-- <div class="row content justify-content-around bg-white">
@@ -46,13 +57,14 @@
             <p><a class="btn btn-danger" href="#" role="button">View &raquo;</a></p>
         </div>
     </div>  -->
-    <div class="text-center">
+    <!-- <div class="text-center">
     <a href="addnew.php" class="btn btn-info text-white track-new  font-italic">Track Call</a>    
     <a  href="dashboard.php" class="btn btn-info text-white track-new  font-italic">Dashboard</a>    
-    </div>
+    </div> -->
      
 </div>
 
 <?php require_once('../assets/bootstrap.js.php') ?>
+<script src="../controller/Home.js"></script> 
 </body>
 </html>

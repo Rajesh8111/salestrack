@@ -81,8 +81,8 @@
                         var status= value.status_id==1?"green":value.status_id==2?"red":value.status_id==3?"amber":"";
 
 
-                        var row = "<tr class=''>"
-                        +"<td>"+value.category+"</td>"
+                        var row = "<tr>"
+                        +"<td >"+value.category+"</td>"
                         +"<td><a href='./editcall.php?id="+value.call_id +"'>"+value.call_id+"</a></td>"
                         +"<td><a href='./editcall.php?id="+value.call_id +"'>"+value.client_name+"</a></td>"
                         +"<td><a href='./editcall.php?id="+value.call_id +"'>"+value.process_name+"</a></td>"
@@ -90,8 +90,8 @@
                         +"<td><a href='./editcall.php?id="+value.call_id +"'>"+value.sales_spoc+"</a></td>"
                         +"<td><a href='./editcall.php?id="+value.call_id+"'>"+value.responsible+"</a></td>"
                         +"<td><a href='./editcall.php?id="+value.call_id+"'>"+value.target_date+"</a></td>"
-                            +"<td>"
-                                +"<button data-id='"+value.call_id+"' class='btn-link text-dark delete "+status+"' onclick='remove("+value.call_id+")' href='../assets/images/Path1.png'>X</button>"     
+                            +"<td >"
+                                +"<img data-id='"+value.call_id+"'  class='btn-link text-dark delete "+status+"' onclick='remove("+value.call_id+")' src='../assets/images/svg/delete.svg'></img>"     
                             +"</td>"
                         +"</tr>";
                         tbody.append(row); 

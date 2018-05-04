@@ -64,6 +64,10 @@
         var next_steps =$('#next-steps-textarea').val();
         var target_date =$('#target-date').val();
         var remarks =$('#remarks').val();
+        var project_start_date = $('#project-start-date').val();
+        var project_end_date = $('#project-end-date').val();
+        var current_status = $('#current-status').val();
+        var opportunity_status = $('#opportunity-status').val();
         $(this).addClass("disabled");
         
         //API Call
@@ -90,9 +94,13 @@
                 +"&discussion_points="+discussion_points
                 +"&next_steps="+next_steps
                 +"&target_date="+target_date
-                +"&remarks="+remarks,
+                +"&remarks="+remarks
+                +"&project_start_date="+project_start_date
+                +"&project_end_date="+project_end_date
+                +"&current_status="+current_status
+                +"&opportunity_status="+opportunity_status,
             success: function(result){
-                if(result){
+                if(result=="true"){
                 alert("Call Successfully Recorded..!");
                 window.location.href="addnew.php";
                 }

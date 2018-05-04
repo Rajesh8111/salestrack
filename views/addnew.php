@@ -36,7 +36,7 @@
     <div class="row justify-content-around mt-20">
         <div class="col-3 ">
             <label  for="">Client Name <span class="required"> *</span></label>
-            <input type="text" name="" id="client-name" class="required form-control-sm custom-textbox w-100">
+            <input type="text" name="" id="client-name" class="form-control-sm custom-textbox w-100">
         </div>
         <div class="col-3 ">
             <label for="">Process Name<span class="required"> *</span></label>            
@@ -88,17 +88,49 @@
             <input type="text" name="" id="remarks" class="form-control-sm custom-textbox w-100" >
         </div>
         </div>
+
+        <div class="row justify-content-between mt-20"> 
+        <div class="col-3">
+        <label for="">Project Start Date</label>                       
+            <input type="date" name="" id="project-start-date" class="form-control-sm custom-textbox w-100" >
+        </div>
+        <div class="col-3">
+        <label for="">Project End Date</label>                       
+            <input type="date" name="" id="project-end-date" class="form-control-sm custom-textbox w-100" >
+        </div>
+       <div class="col-3">
+        <label for="">Current Status</label>                       
+        <select class="form-control custom-textbox" id="current-status">
+        <option value=""></option>        
+        <option value="Demo">Demo</option>
+        <option value="Kick off call">Kick off call</option>
+        <option value="POT">POT</option>
+        <option value="POC">POC</option>
+        <option value="SOW Sign Off">SOW Sign Off</option>
+        <option value="OLA Sign Off">OLA Sign Off</option>
+        <option value="Resource Allocation">Resource Allocation</option>
+        <option value="Process Walkthrough">Process Walkthrough</option>
+        <option value="Testing">Testing</option>
+        <option value="Deployment">Deployment</option>
+        <option value="Process Change">Process Change</option>
+        </select>
+        </div>
+        <div class="col-3">
+        <label for="">Opportunity Status</label>                       
+            <input type="text" name="" id="opportunity-status" class="form-control-sm custom-textbox w-100" >
+        </div>
+        </div>
         
         <div class="row custom-text mt-20 ">
             <label class="w-100">Current Updates
-            <button class="btn-expand" data-toggle="collapse" href="#current-updates-textarea" role="button" aria-expanded="false" aria-controls="collapseExample">&#x25BC;</button>                
+            <button class="btn-expand" data-toggle="collapse" href="#current-updates-textarea" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
             </label>
             <textarea name="" id="current-updates-textarea" cols="30" rows="3" class="collapse form-control" ></textarea>
         
         </div>
         <div class="row custom-text mt-20 ">
-        <label class="w-100">Conversational History
-            <button class="btn-expand" data-toggle="collapse" href="#conversational-history-textarea" role="button" aria-expanded="false" aria-controls="collapseExample">&#x25BC;</button>                
+        <label class="w-100">Conversational History 
+            <button class="btn-expand" data-toggle="collapse" href="#conversational-history-textarea" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
             </label>
             
             <textarea name="" id="conversational-history-textarea" cols="20" rows="3" class="collapse form-control" ></textarea>
@@ -107,21 +139,21 @@
         
         <div class="row custom-text mt-20">
         <label class="w-100">Prodapt Participants
-            <button class="btn-expand" data-toggle="collapse" href="#prodapt-participants-textarea" role="button" aria-expanded="false" aria-controls="collapseExample">&#x25BC;</button>                
+            <button class="btn-expand" data-toggle="collapse" href="#prodapt-participants-textarea" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
             </label>
         
             <textarea name=""  cols="20" rows="3" class="collapse form-control" id="prodapt-participants-textarea" ></textarea>
         </div>
         <div class="row custom-text mt-20 ">
         <label class="w-100">Discussion Points
-            <button class="btn-expand" data-toggle="collapse" href="#discussion-points-textarea" role="button" aria-expanded="false" aria-controls="collapseExample">&#x25BC;</button>                
+            <button class="btn-expand" data-toggle="collapse" href="#discussion-points-textarea" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
             </label>
         
             <textarea name="" id="discussion-points-textarea" cols="20" rows="3" class="collapse form-control" ></textarea>    
         </div>
         <div class="row custom-text mt-20">
         <label class="w-100">Next Steps
-            <button class="btn-expand" data-toggle="collapse" href="#next-steps-textarea" role="button" aria-expanded="false" aria-controls="collapseExample">&#x25BC;</button>                
+            <button class="btn-expand" data-toggle="collapse" href="#next-steps-textarea" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
             </label>
             
             <textarea name="" id="next-steps-textarea" cols="20" rows="3" class="collapse form-control" ></textarea>
