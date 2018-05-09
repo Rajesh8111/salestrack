@@ -14,11 +14,11 @@
 
     <?php require_once('components/header.php') ?>
 
-<div class="container-fluid">
+ <div class="container-fluid main">
     <div class="row text-white img-flex">
-       <img src="../assets/images/call.jpg" alt="" class="banner img-fluid w-100" >
+       <img src="../assets/images/call.jpg" alt="" class="banner w-100" >
     </div>
-    <div class="row content justify-content-around bg-white ">
+    <!--<div class="row content justify-content-around bg-white ">
         <div class="col-lg-3 text-center">
             <h2>Windstream Telco</h2>
             <p>
@@ -26,14 +26,14 @@
                 <a class="btn bg-amber text-white" href="#" role="button" id="21">0 </a>
                 <a class="btn btn-success" href="#" role="button" id="31">0</a>
             </p>
-        </div><!-- /.col-lg-4 -->
+        </div>
         <div class="col-lg-3 text-center">
             <h2>Other Telco</h2><p>
             <a class="btn btn-danger" href="#" role="button" id="13">0</a>
             <a class="btn bg-amber text-white" href="#" role="button" id="23">0</a>
             <a class="btn btn-success" href="#" role="button" id="33">0</a>
         </p>
-        </div><!-- /.col-lg-4 -->
+        </div>
         <div class="col-lg-3 text-center ">
             <h2>Non Telco</h2>
             <p>
@@ -41,8 +41,8 @@
                 <a class="btn bg-amber text-white" href="#" role="button" id="22">0</a>
                 <a class="btn btn-success" href="#" role="button" id="32">0</a>
             </p>
-        </div><!-- /.col-lg-4 -->
-    </div>
+        </div>
+    </div> -->
     <!-- <div class="row content justify-content-around bg-white">
         <div class="col-lg-3 text-center">
             <h2>Green</h2>

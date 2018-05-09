@@ -1,5 +1,12 @@
+<!-- CSS Styles -->
+<style>
+  .navbar{
+    background-image: linear-gradient(to left bottom, #36b1d3, #417fa3, #3c516e, #292939, #050008);
+  }
+</style>
+<!-- Html content -->
 <header id="header">
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" >
         <a class="navbar-brand" href="home.php">Sales Call Tracker</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -45,7 +52,8 @@
             <div class="btn-group ">
                 <button type="button" class="btn btn-tranparent text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <img src="../assets/images/loading.gif" alt="loading..." class="loading" width=20px; style="display:none;">
-                    <?php echo $_SESSION["name"] ?>
+                  <img src="../assets/images/svg/user_black.svg"  width="30px;" >                    
+                  <?php echo $_SESSION["name"] ?>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
                     <button class="dropdown-item" type="button" id="logout">Logout</button>

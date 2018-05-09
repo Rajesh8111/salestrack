@@ -15,17 +15,18 @@
             $sql = "select id,name from users where mail='".$username."' and pass='".$password."'";
             
             if ($res=mysqli_query($con,$sql)) {
-
-                if(mysqli_num_rows($res)==1){
+                $rowCount=mysqli_num_rows($res);
+                if($rowCount==1){
                     $row=mysqli_fetch_array($res, MYSQLI_ASSOC);
                     $_SESSION["id"] = $row["id"];
                     $_SESSION["name"] = $row["name"];
-                    echo true;
-                    return true;
+                    echo "true";
+                }
+                else if($rowCount==0){
+                    echo "Invalid Username / Password.";
                 }
                 else{
-                    die('Error: ' . mysqli_error($con));
-                    return false;
+                    echo 'Error: ' . mysqli_error($con);
                 }
                 
             }
@@ -38,16 +39,54 @@
             unset($_SESSION["name"]);
             unset($_SESSION["id"]);
             echo "true";
-            return true;
         break;
         case 'validate_login':
             if(isset($_SESSION["name"]) && isset($_SESSION["id"])){
-                echo true;
-                return true;
+                echo "true";
             }
         break;
-        case 'login2':
+        case 'setResetToken':
+            $token = mysqli_real_escape_string($con, $_POST['token']);
+            $email = mysqli_real_escape_string($con, $_POST['email']);
+            $sql = "select * from users where mail='$email'";
+            $res=mysqli_query($con,$sql);
+            $count = mysqli_num_rows($res);
+            if($count==1){
+                $sql = "update users set resetToken='$token' where users.mail = '$email'";
+                if($res=mysqli_query($con,$sql))
+                    echo "true";
+                else 
+                    echo 'Error: ' . mysqli_error($con);
+            }
+            else if($count==0){
+                echo "No Account Related to this mail";
+            }
+            else{
+                // die('Error: ' . mysqli_error($con));
+                echo 'Error: ' . mysqli_error($con);
+            }
         break;
+        case 'changePassword':
+        $token = mysqli_real_escape_string($con, $_POST['token']);
+        $password = md5(mysqli_real_escape_string($con, $_POST['password']));
+        $sql = "select * from users where resetToken='$token'";
+        $res=mysqli_query($con,$sql);
+        $count = mysqli_num_rows($res);
+        if($count==1){
+            $sql = "update users set pass='$password',resetToken=0 where resetToken='$token'";
+            if(mysqli_query($con,$sql)){
+
+                echo "true";
+            }
+            else{
+                // die('Error: ' . mysqli_error($con));
+                echo 'Error: ' . mysqli_error($con);
+            }
+        }
+        else{
+            echo "Invalid Token!!";
+        }
+    break;
     }
     }
 

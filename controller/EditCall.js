@@ -104,9 +104,7 @@
     
 })();
 
-function param(name) {
-    return (location.search.split(name + '=')[1] || '').split('&')[0].replace('%20',' ');
-}
+
 
     //Update Call History
     $('#submit').click(function(){

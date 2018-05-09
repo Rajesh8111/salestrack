@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2018 at 02:14 PM
+-- Generation Time: May 04, 2018 at 08:54 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -110,11 +110,11 @@ CREATE TABLE `mapping` (
 INSERT INTO `mapping` (`id`, `user_id`, `call_id`, `category_id`, `status_id`, `Enabled`) VALUES
 (3, 2, 3, 1, 1, 1),
 (4, 2, 4, 1, 3, 1),
-(5, 2, 5, 1, 1, 1),
+(5, 2, 5, 1, 3, 1),
 (6, 2, 6, 3, 3, 1),
 (7, 2, 7, 1, 1, 1),
 (8, 2, 8, 1, 2, 1),
-(9, 2, 9, 2, 3, 1);
+(9, 2, 9, 2, 1, 1);
 
 -- --------------------------------------------------------
 
