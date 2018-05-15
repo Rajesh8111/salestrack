@@ -1,3 +1,4 @@
+
 .content{
     margin-top:10px;
 }
@@ -12,4 +13,14 @@ body,#submit{
 }
 .btn-expand{
     color: #817E5E;
+}
+label{
+    font-weight: bold;
+    color: #B3623C;
+}
+label:hover{
+    cursor:pointer;
+}
+textarea,input[type=text],option{
+    font-size:12px;
 }

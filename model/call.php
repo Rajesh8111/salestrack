@@ -33,14 +33,15 @@
                 $project_start_date = mysqli_real_escape_string($con, $_POST['project_start_date']);       
                 $project_end_date = mysqli_real_escape_string($con, $_POST['project_end_date']);       
                 $current_status = mysqli_real_escape_string($con, $_POST['current_status']);       
-                $opportunity_status = mysqli_real_escape_string($con, $_POST['opportunity_status']);       
+                $opportunity_status = mysqli_real_escape_string($con, $_POST['opportunity_status']);     
+                $created_date = date('m-d-Y');  
                 
                 $sql = "insert into calls (client_name,process_name,current_update,conversational_history,region,"
                     ."client_contact_name,client_contact_designation,sales_spoc,first_meet,second_meet,prodapt_participants,"
-                    ."discussion_points,client_feedback,next_steps,target_date,remarks,responsible,project_start_date,project_end_date,current_status,opportunity_status)"
+                    ."discussion_points,client_feedback,next_steps,target_date,remarks,responsible,project_start_date,project_end_date,current_status,opportunity_status,created_date)"
                     ." values('$client_name','$process_name','$current_updates','$conversational_history','$region',"
                     ."'$client_contact_name','$client_contact_designation','$sales_spoc','$first_meet','$second_meet','$prodapt_participants',"
-                    ."'$discussion_points','$client_feedback','$next_steps','$target_date','$remarks','$responsible','$project_start_date','$project_end_date','$current_status','$opportunity_status')";
+                    ."'$discussion_points','$client_feedback','$next_steps','$target_date','$remarks','$responsible','$project_start_date','$project_end_date','$current_status','$opportunity_status','$created_date')";
 
                 if (mysqli_query($con,$sql)) {
                     $call_id  = mysqli_insert_id($con);

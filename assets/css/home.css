@@ -1,8 +1,9 @@
-body{
-    background: #f1f1f1;
+html,body{
+    background: rgba(66,170,207);
+    height: 100vh;
 }
 main{
-    background-image: url('../images/proposal.jpg') !important;   
+    background-image: url('../images/proposl.jpg') !important;   
     height: 95vh; 
 }
 .banner{
@@ -10,13 +11,90 @@ main{
     border-radius: 1px;
 }
 .content{
-    background: #fff;
-    margin:30px 10px;
+    /* background: #fff; */
+    margin:2px 10px;
     padding: 30px;
     border-radius: 5px;
 }
-
-
+.no-margin{
+    margin-top: 0 !important;
+    padding: 0 !important; 
+}
+.h-30{
+    height: 28vh;
+}
+.typo{
+    /* color: #76D79D; */
+    color: #ac3b61;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: bold;
+}
+.scroll{
+    overflow-y: scroll;
+}
 .track-new{
     margin: 30px 0px;
+}
+.bg-box{
+    /* background: rgba(52, 152, 219,0.8); */
+    /* background-image: #1F2833; */
+    /* background: #f1f1f1; */
+    padding:25px;
+    text-align: center;
+    border-radius: 0px;
+    margin-left: 5px;   
+    color : white;
+}
+.bg-box ul li{
+    color: #fff;
+}
+centered{
+    text-align: center;        
+    margin: 0 auto !important;
+}
+.bg-box legend{
+    color: rgb(1,54,104);
+    font-weight: bold;
+    /* font-size: 28px; */
+}
+/* Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+/* Global */
+html{
+  min-height: 100%;
+  overflow: hidden;
+}
+body{
+  height: calc(100vh - 8em);
+  /* padding: 4em; */
+  /* color: rgba(255,255,255,.75); */
+  font-family: 'Anonymous Pro', monospace;  
+  /* background-color: rgb(25,25,25);   */
+}
+.line-1{
+    position: relative;
+    top: 50%;  
+    width: 15em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    /* font-size: 180%; */
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 3s steps(30) 1s 1 normal both,
+             blinkTextCursor 500ms steps(30) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 14em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(75, 156, 156, 0.75);}
+  to{border-right-color: transparent;}
 }

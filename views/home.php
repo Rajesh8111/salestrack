@@ -15,52 +15,44 @@
     <?php require_once('components/header.php') ?>
 
  <div class="container-fluid main">
-    <div class="row text-white img-flex">
-       <img src="../assets/images/call.jpg" alt="" class="banner w-100" >
+    <div class="row banner text-white ">
+       <img src="../assets/images/call.jpg" alt="" class=" w-100 img-flex" >
     </div>
-    <!--<div class="row content justify-content-around bg-white ">
-        <div class="col-lg-3 text-center">
-            <h2>Windstream Telco</h2>
-            <p>
-                <a class="btn btn-danger" href="#" role="button" id="11">0</a>
-                <a class="btn bg-amber text-white" href="#" role="button" id="21">0 </a>
-                <a class="btn btn-success" href="#" role="button" id="31">0</a>
-            </p>
-        </div>
-        <div class="col-lg-3 text-center">
-            <h2>Other Telco</h2><p>
-            <a class="btn btn-danger" href="#" role="button" id="13">0</a>
-            <a class="btn bg-amber text-white" href="#" role="button" id="23">0</a>
-            <a class="btn btn-success" href="#" role="button" id="33">0</a>
-        </p>
-        </div>
-        <div class="col-lg-3 text-center ">
-            <h2>Non Telco</h2>
-            <p>
-                <a class="btn btn-danger" href="#" role="button" id="12">0</a>
-                <a class="btn bg-amber text-white" href="#" role="button" id="22">0</a>
-                <a class="btn btn-success" href="#" role="button" id="32">0</a>
-            </p>
-        </div>
+    <!-- <div class="row" style="margin-top:45px;">
+    <p class="h5 line-1 anim-typewriter typo">Make a customer, not a sale</p>
     </div> -->
-    <!-- <div class="row content justify-content-around bg-white">
-        <div class="col-lg-3 text-center">
-            <h2>Green</h2>
-            <p><a class="btn btn-success" href="#" role="button">View &raquo;</a></p>
-        </div>
-        <div class="col-lg-3 text-center">
-            <h2>Amber</h2>
-            <p><a class="btn btn-warning text-white" href="#" role="button">View &raquo;</a></p>
-        </div>
-        <div class="col-lg-3 text-center">
-            <h2>Red</h2>
-            <p><a class="btn btn-danger" href="#" role="button">View &raquo;</a></p>
-        </div>
-    </div>  -->
-    <!-- <div class="text-center">
-    <a href="addnew.php" class="btn btn-info text-white track-new  font-italic">Track Call</a>    
-    <a  href="dashboard.php" class="btn btn-info text-white track-new  font-italic">Dashboard</a>    
-    </div> -->
+    <div class="row content justify-content-around">
+        
+    <div class="col-5 bg-box h-30 ">
+        <legend class="">Recent Activities</legend>
+        <marquee behavior="slide" direction="up">
+        <ul class="list-group text-center">
+        <li class="list-group-item-action">Morbi leo risus</li>
+        <li class="list-group-item-action">Porta ac consectetur ac</li>
+        <li class="list-group-item-action">Vestibulum at eros</li>
+        <li class="list-group-item-action">Vestibulum at eros</li>
+        <li class="list-group-item-action">Vestibulum at eros</li>
+        <li class="list-group-item-action">Vestibulum at eros</li>
+        <li class="list-group-item-action">Vestibulum at eros</li>
+        </ul>
+
+        </marquee>
+    </div>
+    <div class="col-5 bg-box h-30 ">
+    <legend  class="">Active Projects</legend>
+        <marquee behavior="slide" direction="down">
+        <ul class="list-group text-center">
+        <li class="list-group-item-action">Morbi leo risus</li>
+        <li class="list-group-item-action">Porta ac consectetur ac</li>
+        <li class="list-group-item-action">Porta ac consectetur ac</li>
+        <li class="list-group-item-action">Porta ac consectetur ac</li>
+        <li class="list-group-item-action">Vestibulum at eros</li>
+        <li class="list-group-item-action">Vestibulum at eros</li>
+        <li class="list-group-item-action">Vestibulum at eros</li>
+        </ul>
+        </marquee>
+    </div>
+    </div>
      
 </div>
 

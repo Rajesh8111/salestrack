@@ -73,11 +73,11 @@
                     $('#second-meet').val(call.second_meet);
                     $('#responsible').val(call.responsible);
                     $('#client-feedback').val(call.client_feedback);
-                    $('#current-updates-textarea').text(call.current_update);
-                    $('#conversational-history-textarea').text(call.conversational_history);
-                    $('#prodapt-participants-textarea').text(call.prodapt_participants);
-                    $('#discussion-points-textarea').text(call.discussion_points);
-                    $('#next-steps-textarea').text(call.next_steps);
+                    $('#current-updates-textarea').text("\n\n"+call.current_update);
+                    $('#conversational-history-textarea').text("\n\n"+call.conversational_history);
+                    $('#prodapt-participants-textarea').text("\n\n"+call.prodapt_participants);
+                    $('#discussion-points-textarea').text("\n\n"+call.discussion_points);
+                    $('#next-steps-textarea').text("\n\n"+call.next_steps);
                     $('#target-date').val(call.target_date);
                     $('#remarks').val(call.remarks);
                     $('#project-start-date').val(call.project_start_date);
@@ -104,6 +104,10 @@
     
 })();
 
+    //back
+    $('#back').click(function(){
+        window.history.back();
+    });
 
 
     //Update Call History
@@ -182,8 +186,7 @@
                     console.log(result);
                 if(result){
                 alert("Call Updated Successfully..!");
-                window.location.href="viewcalls.php?category=All&status=All";
-                }
+                window.location.reload();                }
                 else{
                     console.log(result);
                 }

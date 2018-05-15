@@ -17,7 +17,10 @@
 <div class="loader"></div>
 
 <div class="container content bg-white">
+
     <div class="middle h2 d-inline">EDIT CALL</div>
+    <div class="row justify-content-between">
+        <div class="col-4">
             <div class="d-inline" id="status">
             <div class="custom-control custom-radio d-inline">
             <input type="radio" id="status-green" name="customRadio" class="custom-control-input">
@@ -31,6 +34,13 @@
             <input type="radio" id="status-amber" name="customRadio" class="custom-control-input">
             <label class="custom-control-label text-amber" for="status-amber">Amber</label>
           </div>          
+          </div>
+        </div>
+          <div class="col-2">
+            <button id="submit" class="btn btn-secondary ">Update</button>  
+            <button id="back" class="btn btn-secondary bg-dark ">Back</button>                  
+            </div>
+    
     </div>
     <div class="mt-20"><label for="">Select Category</label></div>                
     <select class="form-control custom-textbox" id="category">
@@ -163,8 +173,7 @@
         <textarea name="" id="next-steps-textarea" cols="20" rows="3" class="collapse form-control" ></textarea>
     </div>
     
-        <div class="row mt-20">
-            <button id="submit" class="btn btn-secondary w-100">Update</button>
+        <div class="row mt-20 justify-content-around">
         </div>
         <div style="margin:250px;"></div>
 

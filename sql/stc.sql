@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2018 at 08:54 AM
+-- Generation Time: May 09, 2018 at 08:21 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -146,16 +146,17 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
   `pass` text NOT NULL,
-  `mail` text NOT NULL
+  `mail` text NOT NULL,
+  `resetToken` bigint(24) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `pass`, `mail`) VALUES
-(2, 'Rajesh Sambasivam', '48fab5aa17e2884fc22bdb3f4cf612dd', 'rajesh.s@prodapt.com'),
-(3, 'Sivakumar S', 'siva', 'sivakumar.s@prodapt.com');
+INSERT INTO `users` (`id`, `name`, `pass`, `mail`, `resetToken`) VALUES
+(2, 'Rajesh Sambasivam', 'f5bb0c8de146c67b44babbf4e6584cc0', 'rajesh.s@prodapt.com', 0),
+(3, 'Sivakumar S', 'siva', 'sivakumar.s@prodapt.com', 0);
 
 --
 -- Indexes for dumped tables

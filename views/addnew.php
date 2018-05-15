@@ -15,7 +15,10 @@
 <?php require_once('components/header.php') ?>
 
 <div class="container content bg-white">
-    <div class="middle h2 d-inline">Track Your New Call</div>
+<div class="middle h2 d-inline">Track Your New Call</div>
+    
+    <div class="row justify-content-between">
+        <div class="col-4">
             <div class="d-inline" id="status">
             <div class="custom-control custom-radio d-inline">
             <input type="radio" id="status-green" name="customRadio" class="custom-control-input" checked="true">
@@ -28,7 +31,14 @@
           <div class="custom-control custom-radio d-inline">
             <input type="radio" id="status-amber" name="customRadio" class="custom-control-input">
             <label class="custom-control-label text-amber" for="status-amber">Amber</label>
-          </div>          
+          </div>     
+</div>
+</div>
+          <!-- <div class="col-2">
+          <button id="submit" class="btn btn-secondary d-inline">Submit</button>
+            <button id="back" class="btn btn-secondary d-inline">Back</button>
+          </div>     -->
+          
     </div>
     <div class="mt-20"><label for="">Select Category</label></div>                
     <select class="form-control custom-textbox" id="category">
@@ -125,7 +135,7 @@
             <label class="w-100">Current Updates
             <button class="btn-expand" data-toggle="collapse" href="#current-updates-textarea" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
             </label>
-            <textarea name="" id="current-updates-textarea" cols="30" rows="3" class="collapse form-control" ></textarea>
+            <textarea name="" id="current-updates-textarea" cols="30" rows="2" class="collapse form-control" ></textarea>
         
         </div>
         <div class="row custom-text mt-20 ">
@@ -133,7 +143,7 @@
             <button class="btn-expand" data-toggle="collapse" href="#conversational-history-textarea" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
             </label>
             
-            <textarea name="" id="conversational-history-textarea" cols="20" rows="3" class="collapse form-control" ></textarea>
+            <textarea name="" id="conversational-history-textarea" cols="20" rows="2" class="collapse form-control" ></textarea>
         </div>
 
         
@@ -142,26 +152,29 @@
             <button class="btn-expand" data-toggle="collapse" href="#prodapt-participants-textarea" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
             </label>
         
-            <textarea name=""  cols="20" rows="3" class="collapse form-control" id="prodapt-participants-textarea" ></textarea>
+            <textarea name=""  cols="20" rows="2" class="collapse form-control" id="prodapt-participants-textarea" ></textarea>
         </div>
         <div class="row custom-text mt-20 ">
         <label class="w-100">Discussion Points
             <button class="btn-expand" data-toggle="collapse" href="#discussion-points-textarea" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
             </label>
         
-            <textarea name="" id="discussion-points-textarea" cols="20" rows="3" class="collapse form-control" ></textarea>    
+            <textarea name="" id="discussion-points-textarea" cols="20" rows="2" class="collapse form-control" ></textarea>    
         </div>
         <div class="row custom-text mt-20">
         <label class="w-100">Next Steps
             <button class="btn-expand" data-toggle="collapse" href="#next-steps-textarea" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
             </label>
             
-            <textarea name="" id="next-steps-textarea" cols="20" rows="3" class="collapse form-control" ></textarea>
+            <textarea name="" id="next-steps-textarea" cols="20" rows="2" class="collapse form-control" ></textarea>
         </div>
         
 
-        <div class="row mt-20">
-            <button id="submit" class="btn btn-secondary w-100">Submit</button>
+        <div class="row mt-20 justify-content-around">
+            <div class="col-2">
+            <button id="submit" class="btn btn-secondary ">Submit</button>
+            <button id="back" class="btn btn-secondary ">Back</button>
+            </div>
         </div>
         <div style="margin:250px;"></div>
 

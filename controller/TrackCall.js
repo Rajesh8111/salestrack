@@ -26,6 +26,10 @@
             }
         });
     });
+    //Back
+    $('#back').click(function(){
+        window.history.back();
+    });
 
     $('#submit').click(function(){
         $('.loading').show()        
@@ -43,7 +47,7 @@
         var process_name = $('#process-name').val();
 
         if(client_name==""||process_name==""){
-            alert('Client and Process names are mandatory fields!');
+            bootbox.alert('Client and Process names are mandatory fields!');
             $('.loading').hide()                
             return false;
             }
@@ -101,8 +105,9 @@
                 +"&opportunity_status="+opportunity_status,
             success: function(result){
                 if(result=="true"){
-                alert("Call Successfully Recorded..!");
-                window.location.href="addnew.php";
+                bootbox.alert("Call Successfully Recorded..!",function(){
+                    window.location.href="addnew.php";                    
+                });
                 }
                 else{
                     console.log(result);
