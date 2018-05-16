@@ -16,7 +16,7 @@
 
  <div class="container-fluid main">
     <div class="row banner text-white ">
-       <img src="../assets/images/call.jpg" alt="" class=" w-100 img-flex" >
+       <!-- <img src="../assets/images/call.jpg" alt="" class=" w-100 img-flex" > -->
     </div>
     <!-- <div class="row" style="margin-top:45px;">
     <p class="h5 line-1 anim-typewriter typo">Make a customer, not a sale</p>
