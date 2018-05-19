@@ -1,6 +1,9 @@
-
+body,html{
+}
 .content{
     margin-top:10px;
+    background-color: #FFFDFD !important;
+    
 }
 .borderless td, .borderless th {
     border: none;

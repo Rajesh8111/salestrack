@@ -1,12 +1,17 @@
 <!-- CSS Styles -->
 <style>
   .navbar{
-    background-image: linear-gradient(to left bottom, #36b1d3, #417fa3, #3c516e, #292939, #050008);
+    /* background-image: linear-gradient(to left bottom, #36b1d3, #417fa3, #3c516e, #292939, #050008); */
+    background-color: #fff !important;
+    color: #333 !important;
+  }
+  .navbar a{
+    color: #333 !important;    
   }
 </style>
 <!-- Html content -->
 <header id="header">
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" >
+      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light" >
         <a class="navbar-brand" href="home.php">Sales Call Tracker</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -22,7 +27,7 @@
               
               
             <div class="dropdown">
-            <button class="btn btn-tranparent text-white dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-tranparent  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             By Category
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -35,7 +40,7 @@
           </div>
 
           <div class="dropdown">
-            <button class="btn btn-tranparent text-white dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-tranparent  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             By Status
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -45,12 +50,12 @@
             <a class="dropdown-item" href="viewcalls.php?category=all&status=Amber">Amber</a>
             </div>
           </div>
-          <a href="../model/export3.php" class="btn btn-tranparent text-white">Export</a>
+          <a href="../model/export3.php" class="btn btn-tranparent">Export</a>
           
           </ul>
 
             <div class="btn-group ">
-                <button type="button" class="btn btn-tranparent text-white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn btn-tranparent  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <img src="../assets/images/loading.gif" alt="loading..." class="loading" width=20px; style="display:none;">
                   <img src="../assets/images/svg/user_black.svg"  width="30px;" >                    
                   <?php echo $_SESSION["name"] ?>
