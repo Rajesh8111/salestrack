@@ -4,6 +4,7 @@
     /* background-image: linear-gradient(to left bottom, #36b1d3, #417fa3, #3c516e, #292939, #050008); */
     background-color: #fff !important;
     color: #333 !important;
+    box-shadow : 2px 2px #f1f1f1;
   }
   .navbar a{
     color: #333 !important;    
@@ -22,7 +23,10 @@
               <a class="nav-link" href="home.php">Home </a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="addnew.php">Track Call</a>
+              
+              <a class="nav-link" href="addnew.php">
+              <i class="fas fa-camera-retro"></i>
+              Track Call</a>
             </li>
               
               
