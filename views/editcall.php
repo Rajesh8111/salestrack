@@ -36,10 +36,10 @@
           </div>          
           </div>
         </div>
-          <div class="col-2">
+          <!-- <div class="col-2">
             <button id="submit" class="btn btn-secondary ">Update</button>  
             <button id="back" class="btn btn-secondary bg-dark ">Back</button>                  
-            </div>
+            </div> -->
     
     </div>
     <div class="mt-20"><label for="">Select Category</label></div>                
@@ -174,6 +174,10 @@
     </div>
     
         <div class="row mt-20 justify-content-around">
+        <div class="col-2">
+            <button id="submit" class="btn btn-secondary ">Update</button>  
+            <button id="back" class="btn btn-secondary bg-dark ">Back</button>                  
+            </div>
         </div>
         <div style="margin:250px;"></div>
 

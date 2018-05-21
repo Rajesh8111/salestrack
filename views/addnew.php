@@ -133,40 +133,46 @@
         
         <div class="row custom-text mt-20 ">
             <label class="w-100">Current Updates
-            <button class="btn-expand" data-toggle="collapse" href="#current-updates-textarea" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
+            <button class="btn-expand" data-toggle="collapse" href="#currentUpdates" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
             </label>
-            <textarea name="" id="current-updates-textarea" cols="30" rows="2" class="collapse form-control" ></textarea>
-        
+            <div id="currentUpdates" class="collapse w-100">
+            <textarea name="" id="current-updates-textarea" cols="30" rows="2" class="d-block form-control" ></textarea>
+            </div>
         </div>
         <div class="row custom-text mt-20 ">
         <label class="w-100">Conversational History 
-            <button class="btn-expand" data-toggle="collapse" href="#conversational-history-textarea" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
-            </label>
             
-            <textarea name="" id="conversational-history-textarea" cols="20" rows="2" class="collapse form-control" ></textarea>
+            <button class="btn-expand" data-toggle="collapse" href="#conversationalHistory" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
+            </label>
+            <div id="conversationalHistory" class="collapse w-100">            
+            <textarea name="" id="conversational-history-textarea" cols="20" rows="2" class="d-block form-control" ></textarea>
+        </div>
         </div>
 
         
         <div class="row custom-text mt-20">
         <label class="w-100">Prodapt Participants
-            <button class="btn-expand" data-toggle="collapse" href="#prodapt-participants-textarea" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
+            <button class="btn-expand" data-toggle="collapse" href="#prodaptParticipants" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
             </label>
-        
-            <textarea name=""  cols="20" rows="2" class="collapse form-control" id="prodapt-participants-textarea" ></textarea>
+            <div id="prodaptParticipants" class="collapse w-100">                    
+            <textarea name=""  cols="20" rows="2" class="d-block form-control" id="prodapt-participants-textarea" ></textarea>
+        </div>
         </div>
         <div class="row custom-text mt-20 ">
         <label class="w-100">Discussion Points
-            <button class="btn-expand" data-toggle="collapse" href="#discussion-points-textarea" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
+            <button class="btn-expand" data-toggle="collapse" href="#discussionPoints" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
             </label>
-        
-            <textarea name="" id="discussion-points-textarea" cols="20" rows="2" class="collapse form-control" ></textarea>    
+            <div id="discussionPoints" class="collapse w-100">                            
+            <textarea name="" id="discussion-points-textarea" cols="20" rows="2" class="d-bloxk form-control" ></textarea>    
+        </div>
         </div>
         <div class="row custom-text mt-20">
         <label class="w-100">Next Steps
-            <button class="btn-expand" data-toggle="collapse" href="#next-steps-textarea" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
+            <button class="btn-expand" data-toggle="collapse" href="#nextSteps" role="button" aria-expanded="false" aria-controls="collapseExample"> &#x25BC;</button>                
             </label>
-            
-            <textarea name="" id="next-steps-textarea" cols="20" rows="2" class="collapse form-control" ></textarea>
+            <div id="nextSteps" class="collapse w-100">                                        
+            <textarea name="" id="next-steps-textarea" cols="20" rows="2" class="d-block form-control" ></textarea>
+            </div>
         </div>
         
 

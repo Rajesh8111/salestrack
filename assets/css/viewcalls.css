@@ -3,40 +3,64 @@
     margin: 0px;
     margin-left:8px;
     color: #FDFDFC; 
-    f: #f1f1f1;
+    /* f: #f1f1f1; */
     
-    bordder: 1px solid #12d2d3;
+    /* border: 1px solid #12d2d3; */
 }
 .dataTable .remove{
     padding: 3px 5px;
     margin: 0px;
     margin-left:8px;
     color: #FDFDFC;
-    backgroufnd: #f1f1f1;
-    bordedr: 1px solid #E78B21;
+    /* background: #f1f1f1; */
+    /* border: 1px solid #E78B21; */
 }
-body{
-    background: #232332 !important;
+body,html, .container-fluid{
+    background: #FAFAFA !important;
+}
+#searchAction{
+    display: none;  
+}
+.bold{
+    font-weight: bold;
+}
+.header{
+    font-size: 22px;
+    font-weight: bold;
 }
 td a{
     color: #000;
+    font-weight: 400;
+    font-stretch: 2em;
+    font-size: 15px;
+}
+label{
+    font-weight: bold;
+    color: #828686 !important;
+    font-size:15px;
 }
 thead tr{
     background: #4E5555;
     color: #F8F7F7;
 }
+.search{
+    /* padding:2px; */
+    border-radius: 2px;
+    text-align: center;
+    box-shadow: 0;
+}
 
 .green{
-    cdolor: #0DAF0D !important;
-    background: #2ecc71 !important;
+    color: #0DAF0D !important;
+    /* background: #2ecc71 !important; */
 }
 .red{
-    colosr: #C95747!important;
-    background: #e74c3c !important;
+    color: #C95747!important;
+    /* background: #e74c3c !important; */
 }
 .amber{
-    colpor: #EEBB24 !important;
-    background: #EBEB30 !important;
+    color: #EEBB24 !important;
+    /* background: #EBEB30 !important; */
 }
 .delete{
     background: url(assets/images/Path1.png);

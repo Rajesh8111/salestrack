@@ -45,7 +45,7 @@
                     console.log(call); 
 
                     if(call.client_name=="" && call.process_name==""){
-                        alert("No Data found!");
+                        bootbox.alert("No Data found!");
                         window.href.location="../home.php";
                     }
                     
@@ -91,7 +91,7 @@
                 }
                 else{
                     console.log(result);
-                    alert("No Data found!");
+                    bootbox.alert("No Data found!");
                     window.location.href="viewcalls.php";
                 }
                
@@ -124,7 +124,7 @@
         status = $('#status-red').is(":checked") ? 2 : status;
         status = $('#status-amber').is(":checked") ? 3: status;
         if(status==null){
-        alert('status must be selected before submitting!!');
+        bootbox.alert('status must be selected before submitting!!');
         return false;
         }
         $('#submit').attr("disabled","disabled");
@@ -185,8 +185,10 @@
                 success: function(result){
                     console.log(result);
                 if(result){
-                alert("Call Updated Successfully..!");
-                window.location.reload();                }
+                bootbox.alert("Call Updated Successfully..!",function(){
+                    window.location.reload();      
+                });
+                }
                 else{
                     console.log(result);
                 }

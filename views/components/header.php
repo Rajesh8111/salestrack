@@ -25,7 +25,7 @@
             <li class="nav-item active">
               
               <a class="nav-link" href="addnew.php">
-              <i class="fas fa-camera-retro"></i>
+              <i class="fas fa-address-card"></i>
               Track Call</a>
             </li>
               

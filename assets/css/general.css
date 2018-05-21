@@ -4,6 +4,8 @@ body,html{
     margin:0;
     background: #f1f1f1;
     font-size: 14px;
+    font-family: 'Josefin Slab', serif !important;
+    
 }
 header{
     margin-bottom: 44px;
@@ -12,12 +14,13 @@ header{
 header .navbar{
     padding: 2px;
     padding-left: 5px;
-    
+    font-family: 'Josefin Slab', serif !important;
+    color: #494848 !important;
 }
 .center{
     position: absolute;
-    left:50%;
     top:50%;
+    left: 50%;
     transform: translate(-50%,-50%);
 }
 .middle{
@@ -26,7 +29,9 @@ header .navbar{
 .btn-tranparent{
     background : rgba(0,0,0,0) !important;
 }
-
+i {
+    font-family: fontawesome !important;
+    }
 .text-underline{
     text-decoration: underline;
 }

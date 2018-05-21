@@ -34,7 +34,7 @@
                 $project_end_date = mysqli_real_escape_string($con, $_POST['project_end_date']);       
                 $current_status = mysqli_real_escape_string($con, $_POST['current_status']);       
                 $opportunity_status = mysqli_real_escape_string($con, $_POST['opportunity_status']);     
-                $created_date = date('m-d-Y');  
+                $created_date = date('Y-m-d');  
                 
                 $sql = "insert into calls (client_name,process_name,current_update,conversational_history,region,"
                     ."client_contact_name,client_contact_designation,sales_spoc,first_meet,second_meet,prodapt_participants,"
@@ -72,28 +72,28 @@
         ."category.id=mapping.category_id where calls.id in "
         ."(SELECT call_id FROM mapping where  category_id in "
         ."(SELECT id from category) and status_id in "
-        ."(SELECT id from status)) and Enabled='1'";
+        ."(SELECT id from status)) and Enabled='1' order by created_date";
        }
         else if(strtolower($status)=="all"){
         $sql = "SELECT *  from calls join mapping on calls.id=mapping.call_id  join category on "
         ."category.id=mapping.category_id where calls.id in "
         ."(SELECT call_id FROM mapping where  category_id in "
         ."(SELECT id from category where category='$category') and status_id in "
-        ."(SELECT id from status)) and Enabled='1'";
+        ."(SELECT id from status)) and Enabled='1' order by created_date";
        }
        else if (strtolower($category)=="all"){
         $sql = "SELECT *  from calls join mapping on calls.id=mapping.call_id  join category on "
         ."category.id=mapping.category_id where calls.id in "
         ."(SELECT call_id FROM mapping where  category_id in "
         ."(SELECT id from category) and status_id in "
-        ."(SELECT id from status where status='$status')) and Enabled='1'";
+        ."(SELECT id from status where status='$status')) and Enabled='1' order by created_date";
        }
        else{               
         $sql = "SELECT *  from calls join mapping on calls.id=mapping.call_id  join category on "
         ."category.id=mapping.category_id where calls.id in "
         ."(SELECT call_id FROM mapping where  category_id in "
         ."(SELECT id from category where category='$category') and status_id in "
-        ."(SELECT id from status where status='$status')) and Enabled='1'";
+        ."(SELECT id from status where status='$status')) and Enabled='1' order by created_date";
        }
        
                 $rows = array();
@@ -214,28 +214,28 @@
                 ."category.id=mapping.category_id where calls.id in "
                 ."(SELECT call_id FROM mapping where user_id='$user' and category_id in "
                 ."(SELECT id from category) and status_id in "
-                ."(SELECT id from status))";
+                ."(SELECT id from status)) and Enabled='1' order by created_date";
             }
                 else if(strtolower($status)=="all"){
                 $sql = "SELECT *  from calls join mapping on calls.id=mapping.call_id  join category on "
                 ."category.id=mapping.category_id where calls.id in "
                 ."(SELECT call_id FROM mapping where user_id='$user' and category_id in "
                 ."(SELECT id from category where category='$category') and status_id in "
-                ."(SELECT id from status))";
+                ."(SELECT id from status)) and Enabled='1' order by created_date";
             }
             else if (strtolower($category)=="all"){
                 $sql = "SELECT *  from calls join mapping on calls.id=mapping.call_id  join category on "
                 ."category.id=mapping.category_id where calls.id in "
                 ."(SELECT call_id FROM mapping where user_id='$user' and category_id in "
                 ."(SELECT id from category) and status_id in "
-                ."(SELECT id from status where status='$status'))";
+                ."(SELECT id from status where status='$status')) and Enabled='1' order by created_date";
             }
             else{               
                 $sql = "SELECT *  from calls join mapping on calls.id=mapping.call_id  join category on "
                 ."category.id=mapping.category_id where calls.id in "
                 ."(SELECT call_id FROM mapping where user_id='$user' and category_id in "
                 ."(SELECT id from category where category='$category') and status_id in "
-                ."(SELECT id from status where status='$status'))";
+                ."(SELECT id from status where status='$status')) and Enabled='1' order by created_date";
             }
             $resultt = $con->query($sql);
             while ($property = mysqli_fetch_field($resultt)) { //fetch table field name

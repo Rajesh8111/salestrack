@@ -21,7 +21,7 @@
         </div>
         <div class="col-10">
             <div class="center login" style="width:320px;">
-        <div class="h1 text-info">Sales Call Tracker</div>
+            <div class="h1 text-info">Sales Call Tracker</div>
                 
                 <br>
                     <div class="login" >

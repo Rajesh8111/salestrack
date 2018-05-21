@@ -111,6 +111,8 @@
                 }
                 else{
                     console.log(result);
+                    window.location.href="error.php";
+                    
                 }
                 $('.loading').hide();
                 
