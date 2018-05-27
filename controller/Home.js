@@ -6,21 +6,18 @@
             type:"POST",
             url: "../model/call.php",
             data: 
-                "method=load_dashboard",
+                "method=getTopActivities",
             success: function(result){
                 if(result){
-                    rows = $.parseJSON(result);
+                    // rows=result;
+                    rows=$.parseJSON(result);
                     console.log(rows);
-                    $('#11').text(rows["11"]);
-                    $('#12').text(rows["12"]);
-                    $('#13').text(rows["13"]);
-                    $('#21').text(rows["21"]);
-                    $('#22').text(rows["22"]);
-                    $('#23').text(rows["23"]);
-                    $('#31').text(rows["31"]);
-                    $('#32').text(rows["32"]);
-                    $('#33').text(rows["33"]);
-
+                    var activityElement = $('#activities');
+                    $.each(rows, function(index, value) {
+                        let content = "Process "+value.processName+" was "+value.activity+" by "+value.userName;
+                        let list = "<li class='list-group-item-action'>"+content+"</li>";
+                        $(activityElement).append(list);                    
+                    });
                 }
                 else{
                     console.log(result);

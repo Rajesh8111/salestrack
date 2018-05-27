@@ -50,8 +50,18 @@
                     $sql = "insert into mapping (user_id,call_id,category_id,status_id,Enabled) values('$user_id','$call_id','$category','$status','1')";
 
                     if (mysqli_query($con,$sql)) {
-                        echo "true";
-                        return true;
+
+                        //Inserting track on Activity monitor
+                        $userName =  $_SESSION['name'];                        
+                        $sql = "insert into activity (processName,activity,userName) values('$process_name','added','$userName')";
+                        if (mysqli_query($con,$sql)) {
+                            echo "true";
+                            return true;
+                        }
+                        else{
+                            die('Error: ' . mysqli_error($con));
+                            return false;
+                        }
                     }
                     else{
                         die('Error: ' . mysqli_error($con));
@@ -169,8 +179,18 @@
 
                 $sql = "update mapping set category_id='$category',status_id='$status' where call_id='$id'";
                 if (mysqli_query($con,$sql)) {
-                    echo true;
-                    return true;
+                    
+                    //Inserting track on Activity monitor
+                    $userName =  $_SESSION['name'];                        
+                    $sql = "insert into activity (processName,activity,userName) values('$process_name','modified','$userName')";
+                    if (mysqli_query($con,$sql)) {
+                        echo "true";
+                        return true;
+                    }
+                    else{
+                        die('Error: ' . mysqli_error($con));
+                        return false;
+                    }
                 }
                 else{
                     die('Error: ' . mysqli_error($con));
@@ -188,13 +208,42 @@
             $id = mysqli_real_escape_string($con, $_POST['call_id']);
             $sql = "update mapping set Enabled='0' where call_id=$id";
             if (mysqli_query($con,$sql)) {
-                echo true;
-                return true;
+                
+                //Inserting track on Activity monitor
+                $userName =  $_SESSION['name'];                        
+                $sql = "insert into activity (processName,activity,userName) values('$process_name','removed','$userName')";
+                if (mysqli_query($con,$sql)) {
+                    echo "true";
+                    return true;
+                }
+                else{
+                    die('Error: ' . mysqli_error($con));
+                    return false;
+                }
             }
             else{
                 die('Error: ' . mysqli_error($con));
                 return false;
             }
+        break;
+        case 'getTopActivities':
+            
+            $sql = "SELECT * from activity order by timestamp limit 10";
+            $rows = array();
+            if ($res = mysqli_query($con,$sql)) {
+                while($r = mysqli_fetch_array($res)) {
+                    $rows[] = $r;
+                  }
+                  print json_encode($rows);
+                 //print $sql;
+                 
+                 return true;
+            }
+            else{
+                die('Error: ' . mysqli_error($con));
+                return false;
+            }
+
         break;
         case 'export': 
             $filename = "Calls";  //your_file_name

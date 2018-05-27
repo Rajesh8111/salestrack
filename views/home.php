@@ -28,14 +28,14 @@
     <div class=" col-5 bg-box h-30 ">
         <legend class="">Recent Activities</legend>
         <marquee behavior="slide" direction="up">
-        <ul class="list-group text-center">
-        <li class="list-group-item-action">Morbi leo risus</li>
+        <ul class="list-group text-center" id="activities">
+        <!-- <li class="list-group-item-action">Morbi leo risus</li>
         <li class="list-group-item-action">Porta ac consectetur ac</li>
         <li class="list-group-item-action">Vestibulum at eros</li>
         <li class="list-group-item-action">Vestibulum at eros</li>
         <li class="list-group-item-action">Vestibulum at eros</li>
         <li class="list-group-item-action">Vestibulum at eros</li>
-        <li class="list-group-item-action">Vestibulum at eros</li>
+        <li class="list-group-item-action">Vestibulum at eros</li> -->
         </ul>
 
         </marquee>

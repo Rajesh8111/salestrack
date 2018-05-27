@@ -125,6 +125,7 @@
                                     bootbox.alert("Password reset link sended to your mail, Please check your mailbox.");
                                 }else{
                                     //navigate to error page
+                                    console.log(result);
                                     window.location.href="views/error.php";
                                 }
                             }
@@ -135,6 +136,7 @@
                         bootbox.alert(result);
                     }else{
                         //navigate to error page
+                        console.log(result);                        
                         window.location.href="views/error.php"; 
                     }
                 }});
@@ -154,8 +156,8 @@
             err.removeClass('text-hide');
         }
         else if(newPassword.length<8 || confirmPassword<8){
-            bootbox.alert(newPassword);
-            bootbox.alert(confirmPassword);
+            // bootbox.alert(newPassword);
+            // bootbox.alert(confirmPassword);
             err.text("password not having minimum characters..!");
             err.removeClass('text-hide');
         }

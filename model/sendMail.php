@@ -25,7 +25,7 @@ $toEmail = $_POST['toEmail'];
 $mail->Username = "prodapt\b1079";
 
 //Password to use for SMTP authentication
-$mail->Password = "R@jeshbca";
+$mail->Password = "R@jesh111";
 
 $mail->setFrom('rajesh.s@prodapt.com', 'Sales Tracker');
 $mail->addAddress($toEmail, 'User of Salestracker');
