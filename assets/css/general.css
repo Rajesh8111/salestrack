@@ -4,8 +4,8 @@ body,html{
     margin:0;
     background: #f1f1f1;
     font-size: 14px;
-    font-family: 'Josefin Slab', serif !important;
-    
+    /* font-family: 'Fajita'; */
+    font-family: 'FallingSky';
 }
 header{
     margin-bottom: 44px;
@@ -14,8 +14,13 @@ header{
 header .navbar{
     padding: 2px;
     padding-left: 5px;
-    font-family: 'Josefin Slab', serif !important;
-    color: #494848 !important;
+}
+i{
+    color: rgb(168, 161, 161);
+    font-family : 'Font Awesome\ 5 Free' !important;
+}
+.rotate{
+    transform: rotate(120deg) !important;
 }
 .center{
     position: absolute;

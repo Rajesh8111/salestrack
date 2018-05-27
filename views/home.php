@@ -41,7 +41,7 @@
         </marquee>
     </div>
     <div class="col-3">
-            <img src="../assets/images/Telebots_logo.jpg" alt="" class="img-fluid">
+            <img src="../assets/images/telebots.png" alt="" class="img-fluid telebots">
         </div>
     <!-- <div class="col-5 bg-box h-30 ">
     <legend  class="">Active Projects</legend>

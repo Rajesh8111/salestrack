@@ -1,11 +1,10 @@
-
-<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-
-<!-- <link href=“https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css”/> -->
-<!-- <link rel="stylesheet" href="../assets/fonts/font-awesome/font-awesome/fa-solid.min.css"> -->
-<!-- <link rel="stylesheet" href="../assets/fonts/googleicons/icons.css"> -->
-<link rel="stylesheet" href="../assets/fonts/font-awesome/css/fontawesome.min.css">
-<link href="../assets/fonts?family=Cairo|Comfortaa|Yantramanav|Josefin+Slab" rel="stylesheet">
-<link href="../assets/css/general.css" rel="stylesheet">
+<!-- Import Fonts -->
+<link href="../assets/fonts?family=Fjalla+One" rel="stylesheet">
+<link href="../assets/fonts/FallingSkyLight" rel="stylesheet">
 
 <!-- Icons Font -->
+<link rel="stylesheet" href="../assets/fonts/font-awesome/css/fontawesome-all.min.css">
+
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Mina" rel="stylesheet"> -->
+<link href="../assets/css/general.css" rel="stylesheet">
