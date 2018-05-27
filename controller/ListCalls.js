@@ -89,14 +89,14 @@
                         var row = "<tr>"
                         +"<td><a class='"+status+" bold' href='./editcall.php?id="+value.call_id +"'>"+value.category+"</a></td>"                        
                         +"<td><a  href='./editcall.php?id="+value.call_id +"'>"+diffDays+"</a></td>"
+                        +"<td><a  href='./editcall.php?id="+value.call_id +"'>"+value.process_name+"</a></td>"                        
                         +"<td><a  href='./editcall.php?id="+value.call_id +"'>"+value.client_name+"</a></td>"
-                        +"<td><a  href='./editcall.php?id="+value.call_id +"'>"+value.process_name+"</a></td>"
                         +"<td><a href='./editcall.php?id="+value.call_id +"'>"+value.region+"</a></td>"
                         +"<td><a  href='./editcall.php?id="+value.call_id +"'>"+value.sales_spoc+"</a></td>"
                         +"<td><a  href='./editcall.php?id="+value.call_id+"'>"+value.responsible+"</a></td>"
                         // +"<td><a class='"+status+"' href='./editcall.php?id="+value.call_id+"'>"+value.target_date+"</a></td>"
                             +"<td >"
-                                +"<img data-id='"+value.call_id+"' title='Delete' class='btn-link text-dark delete "+status+"' onclick='remove("+value.call_id+")' src='../assets/images/svg/delete.svg'></img>"     
+                                +"<img data-id='"+value.call_id+"' title='Delete' class='btn-link text-dark delete "+status+"' onclick='remove("+value.call_id+","+'"'+value.process_name+'"'+")' src='../assets/images/svg/delete.svg'></img>"     
                             +"</td>"
                         +"</tr>";
                         tbody.append(row); 
@@ -153,8 +153,10 @@
     }
 })();
 
-function remove(id){
-    var confirm = window.confirm('Are you sure to remove the history of call : '+id+'?');
+function remove(id,processName){
+    
+    // alert(processName);
+    var confirm = window.confirm('Are you sure to remove the history of call : '+processName+'?');
     if(confirm){
         //API Call
         $.ajax({
@@ -162,7 +164,8 @@ function remove(id){
             url: "../model/call.php",
             data: 
                 "method=removecall"
-                +"&call_id="+id,
+                +"&call_id="+id
+                +"&processName="+processName,
             success: function(result){
                 if(result){
                     window.location.reload();

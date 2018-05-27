@@ -54,12 +54,13 @@
 <div class="row mt-20">
 <div class="container-fluid ">
 <table class="display   text-center table-sm table-striped " id="calls" style="width:100%; max-height:60vh;">
-    <thead>
+  
+<thead>
     <tr>
         <th>Category</th>
         <th>Days</th>
+        <th>Process Name</th>        
         <th>Client Name</th>
-        <th>Process Name</th>
         <th>Region</th>
         <th>Sales SPOC</th>
         <th>Responsible</th>
@@ -69,20 +70,22 @@
     </thead>
     <tbody id="tbody">
     
+    
     </tbody>
     <tfoot>
             <tr>
             <th>Category</th>
         <th>Days</th>
+        <th>Process Name</th>        
         <th>Client Name</th>
-        <th>Process Name</th>
         <th>Region</th>
         <th>Sales SPOC</th>
         <th>Responsible</th>
         <!-- <th>Target Date</th> -->
         <th>Action</th>
             </tr>
-        </tfoot>
+        </tfoot>  
+    
 </table>
 </div> 
 

@@ -206,12 +206,13 @@
         break;
         case 'removecall':
             $id = mysqli_real_escape_string($con, $_POST['call_id']);
+            $processName = mysqli_real_escape_string($con, $_POST['processName']);
             $sql = "update mapping set Enabled='0' where call_id=$id";
             if (mysqli_query($con,$sql)) {
                 
                 //Inserting track on Activity monitor
                 $userName =  $_SESSION['name'];                        
-                $sql = "insert into activity (processName,activity,userName) values('$process_name','removed','$userName')";
+                $sql = "insert into activity (processName,activity,userName) values('$processName','removed','$userName')";
                 if (mysqli_query($con,$sql)) {
                     echo "true";
                     return true;
@@ -228,7 +229,7 @@
         break;
         case 'getTopActivities':
             
-            $sql = "SELECT * from activity order by timestamp limit 10";
+            $sql = "SELECT * from activity order by timestamp desc limit 10";
             $rows = array();
             if ($res = mysqli_query($con,$sql)) {
                 while($r = mysqli_fetch_array($res)) {
