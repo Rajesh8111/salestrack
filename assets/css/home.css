@@ -48,6 +48,10 @@ main{
 .bg-box ul li{
     color: #615D5D;
 }
+#activities{
+  font-family: 'Anonymous Pro', monospace;  
+  
+}
 centered{
     text-align: center;        
     margin: 0 auto !important;
@@ -71,7 +75,6 @@ body{
   height: calc(100vh - 8em);
   /* padding: 4em; */
   /* color: rgba(255,255,255,.75); */
-  font-family: 'Anonymous Pro', monospace;  
   /* background-color: rgb(25,25,25);   */
 }
 .line-1{
