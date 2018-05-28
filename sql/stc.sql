@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2018 at 11:28 AM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: May 28, 2018 at 05:02 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `stc`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `activity`
+--
+
+CREATE TABLE `activity` (
+  `id` int(11) NOT NULL,
+  `processName` varchar(150) NOT NULL,
+  `activity` varchar(50) NOT NULL,
+  `userName` varchar(150) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -54,26 +68,6 @@ CREATE TABLE `calls` (
   `last_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `calls`
---
-
-INSERT INTO `calls` (`id`, `client_name`, `process_name`, `current_update`, `conversational_history`, `region`, `client_contact_name`, `client_contact_designation`, `sales_spoc`, `first_meet`, `second_meet`, `prodapt_participants`, `discussion_points`, `client_feedback`, `next_steps`, `responsible`, `target_date`, `remarks`, `project_start_date`, `project_end_date`, `current_status`, `opportunity_status`, `last_updated`, `created_date`) VALUES
-(3, 'a', 'a', '', '', 'a', 'a', 'a', 'a', '2018-12-31', '2017-12-31', '', '', 'a', '', 'aa', '2018-12-31', 'a', '0000-00-00', '0000-00-00', 'a', '', '2018-04-30 03:32:47', '0000-00-00'),
-(4, 'asd', 'asd', '\n\n', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', 'Process Change', '', '2018-05-14 07:11:28', '0000-00-00'),
-(5, 'sfds', 'sf', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '', '', '2018-04-30 03:39:48', '0000-00-00'),
-(6, 'ads', 'sad', '\n\n\n\n', '', '', '', '', '', '0000-00-00', '0000-00-00', 'sdfs', '', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', 'Kick off call', 'dfv', '2018-05-14 07:11:10', '0000-00-00'),
-(7, 'sdf', 'dfs', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '', '2018-04-11', '2018-04-04', 'Deployment', 's', '2018-04-30 03:41:59', '0000-00-00'),
-(8, 'a', 'a', '', '', 'aa', 'a', 'a', 'a', '2018-12-31', '2018-12-31', '', '', 'a', '', 'a', '2018-12-31', 'a', '2018-12-31', '2018-12-31', 'Demo', 'b', '2018-04-30 03:49:23', '0000-00-00'),
-(9, 'fsfq', 'bbkh', 'sdfasd\nasd\nasd\nasd\nas\nda\nsd\nasd\nas\nd\nasd\nasd\nas\nd\nasd\nas\nda\nsd\nas\nda\ns', 'sdfs', 'hkjh', 'kjh', 'hk', 'hk', '2018-12-31', '0000-00-00', 'sdfsdf', 'dsfdsf', 'lnn', 'fsdfsd`', 'mnbjhb', '2018-12-31', 'fdsd', '2018-12-31', '2018-12-31', 'Kick off call', 'vfdf', '2018-05-15 07:19:29', '2018-04-10'),
-(10, 'sdf', 'sdfdsf', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '', '', '2018-05-15 07:22:21', '0000-00-00'),
-(11, 'sdfs', 'ddw', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '', '', '2018-05-15 07:25:47', '0000-00-00'),
-(12, 'das', 'asdas', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '', '', '2018-05-15 07:26:23', '0000-00-00'),
-(13, 'sd', 'asd', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '', '', '2018-05-15 07:26:40', '0000-00-00'),
-(14, 's', 'd', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '', '', '2018-05-15 07:27:22', '0000-00-00'),
-(15, 's', 'ds', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '', '', '2018-05-15 07:31:22', '0000-00-00'),
-(16, 'sdf', 'das', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '0000-00-00', '', '0000-00-00', '0000-00-00', '', '', '2018-05-15 07:32:23', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -110,26 +104,6 @@ CREATE TABLE `mapping` (
   `status_id` int(11) NOT NULL,
   `Enabled` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `mapping`
---
-
-INSERT INTO `mapping` (`id`, `user_id`, `call_id`, `category_id`, `status_id`, `Enabled`) VALUES
-(3, 2, 3, 1, 1, 1),
-(4, 2, 4, 1, 3, 1),
-(5, 2, 5, 1, 3, 1),
-(6, 2, 6, 1, 3, 1),
-(7, 2, 7, 1, 1, 1),
-(8, 2, 8, 1, 2, 1),
-(9, 2, 9, 2, 1, 1),
-(10, 2, 10, 1, 1, 1),
-(11, 2, 11, 1, 1, 1),
-(12, 2, 12, 1, 1, 1),
-(13, 2, 13, 1, 1, 1),
-(14, 2, 14, 1, 1, 1),
-(15, 2, 15, 1, 1, 1),
-(16, 2, 16, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -170,12 +144,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `pass`, `mail`, `resetToken`) VALUES
-(2, 'Rajesh Sambasivam', 'f5bb0c8de146c67b44babbf4e6584cc0', 'rajesh.s@prodapt.com', 0),
-(3, 'Sivakumar S', 'siva', 'sivakumar.s@prodapt.com', 0);
+(2, 'Rajesh Sambasivam', 'c7d6c31572b1b3b373f023de209c1fa6', 'rajesh.s@prodapt.com', 0),
+(3, 'Sivakumar S', 'c7d6c31572b1b3b373f023de209c1fa6', 'sivakumar.s@prodapt.com', 0);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `activity`
+--
+ALTER TABLE `activity`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `calls`
@@ -212,10 +192,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `activity`
+--
+ALTER TABLE `activity`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
 -- AUTO_INCREMENT for table `calls`
 --
 ALTER TABLE `calls`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -227,7 +213,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `mapping`
 --
 ALTER TABLE `mapping`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `status`
