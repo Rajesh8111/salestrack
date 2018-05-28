@@ -145,7 +145,7 @@
 
     //Update Password
     $('#submitNewPassword').click(function(){
-        var err=$("#err");        
+        let err=$("#err");        
         const token = param('token');
         // bootbox.alert(token);
         const newPassword = $('#newPassword').val();
@@ -155,16 +155,14 @@
             err.text("values required for both the fields..!");
             err.removeClass('text-hide');
         }
-        else if(newPassword.length<8 || confirmPassword<8){
-            // bootbox.alert(newPassword);
-            // bootbox.alert(confirmPassword);
+        else if(newPassword.length<7 || confirmPassword<7){
             err.text("password not having minimum characters..!");
             err.removeClass('text-hide');
         }
         else if(newPassword!=confirmPassword){
             err.text("password not matches..!");
             err.removeClass('text-hide');
-        }
+        } 
         else if(newPassword==confirmPassword){
             
             $.ajax({
